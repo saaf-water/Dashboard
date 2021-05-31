@@ -1,5 +1,4 @@
 import React from 'react'
-import './Home.css'
 import { NavLink } from "react-router-dom";
 import DashboardTwoToneIcon from "@material-ui/icons/DashboardTwoTone";
 import TimelineIcon from "@material-ui/icons/Timeline";
