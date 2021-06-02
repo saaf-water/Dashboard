@@ -10,9 +10,9 @@ function App() {
     <HashRouter basename='/'>
       <Route exact path="/Dashboard/" component={Dashboard}/>
       <Route exact path="/" component={Dashboard}/>
-      <Route  path="/Dashboard/Charts"component={Dashboard}/>
-      <Route  path="/Dashboard/labTest"component={Dashboard}/>
-      <Route  path="/Dashboard/Map"component={Dashboard}/>
+      <Route  path="/Charts"component={Dashboard}/>
+      <Route  path="/labTest"component={Dashboard}/>
+      <Route  path="/Map"component={Dashboard}/>
     </HashRouter>
   );
 }
