@@ -23,7 +23,7 @@ export default function Navbar() {
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-gray-800">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-gray-700">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -54,7 +54,7 @@ export default function Navbar() {
                           key={item.name}
                           onClick={() => {window.location.pathname = item.link }}
                           className={classNames(
-                            window.location.pathname == item.link ? 'bg-white dark:bg-black text-indigo-600 dark:text-indigo-400' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-black hover:text-gray-800 dark:hover:text-gray-200',
+                            window.location.pathname == item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
                             'px-3 py-2 rounded-md text-sm font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
@@ -67,7 +67,7 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button className=" p-1 rounded-full text-gray-500 dark:text-gray-700 hover:text-black dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-700 focus:ring-gray-300 dark:focus:ring-gray-700">
+                <button className=" p-1 rounded-full text-gray-500 dark:text-gray-600 hover:text-black dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-800 focus:ring-gray-300 dark:focus:ring-gray-800">
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
@@ -98,15 +98,15 @@ export default function Navbar() {
                       >
                         <Menu.Items
                           static
-                          className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 ring-opacity-5 focus:outline-none"
+                          className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-700 ring-1 ring-gray-300 dark:ring-gray-700 ring-opacity-5 focus:outline-none"
                         >
                           <Menu.Item>
                             {({ active }) => (
                               <a
                                 href="#"
                                 className={classNames(
-                                  active ? 'bg-gray-100 dark:bg-gray-700' : '',
-                                  'block px-4 py-2 text-sm text-gray-600 dark:text-400'
+                                  active ? 'bg-gray-100 dark:bg-gray-800' : '',
+                                  'block px-4 py-2 text-sm text-gray-400 dark:text-400'
                                 )}
                               >
                                 Your Profile
@@ -118,8 +118,8 @@ export default function Navbar() {
                               <a
                                 href="#"
                                 className={classNames(
-                                  active ? 'bg-gray-100 dark:bg-gray-700' : '',
-                                  'block px-4 py-2 text-sm text-gray-600 dark:text-400'
+                                  active ? 'bg-gray-100 dark:bg-gray-800' : '',
+                                  'block px-4 py-2 text-sm text-gray-400 dark:text-400'
                                 )}
                               >
                                 Settings
@@ -131,8 +131,8 @@ export default function Navbar() {
                               <a
                                 href="#"
                                 className={classNames(
-                                  active ? 'bg-gray-100 dark:bg-gray-700' : '',
-                                  'block px-4 py-2 text-sm text-gray-600 dark:text-400'
+                                  active ? 'bg-gray-100 dark:bg-gray-800' : '',
+                                  'block px-4 py-2 text-sm text-gray-400 dark:text-400'
                                 )}
                               >
                                 Sign out
@@ -156,7 +156,7 @@ export default function Navbar() {
                     key={item.name}
                     onClick={() => {window.location.pathname = item.link }}
                     className={classNames(
-                      window.location.pathname == item.link ? 'bg-white dark:bg-black text-indigo-600 dark:text-indigo-400' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-black hover:text-gray-800 dark:hover:text-gray-200',
+                      window.location.pathname == item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200',
                       'block px-3 py-2 rounded-md text-base font-medium'
                     )}
                     aria-current={item.current ? 'page' : undefined}
