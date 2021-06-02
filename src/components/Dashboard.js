@@ -8,7 +8,7 @@ export default function Dashboard() {
       <Navbar/>
       
       <div class="flex flex-row">
-        <div class="flex-auto lg:border lg:border-l border-t border-gray-300 dark:border-gray-800 lg:rounded-t-xl bg-white dark:bg-gray-800 h-screen relative"></div>
+        <div class="flex-auto lg:border lg:border-l border-t border-gray-300 dark:border-gray-700 lg:rounded-t-xl bg-white dark:bg-gray-800 h-screen relative"></div>
       </div>
     </div>
     ); 
