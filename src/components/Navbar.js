@@ -35,11 +35,13 @@ export default function Navbar() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                     <a
+                    href="/"
                     className="text-2xl font-thin text-gray-600 dark:text-gray-300 lg:hidden h-8 w-auto"
                     alt="Saaf water">
                         <span class="text-2xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
                     </a>
                     <a
+                    href="/"
                     className="text-3xl font-thin text-gray-600 dark:text-gray-300 hidden lg:block h-8 w-auto"
                     alt="Saaf water">
                       <span class="text-3xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
@@ -54,7 +56,7 @@ export default function Navbar() {
                           key={item.name}
                           onClick={() => {window.location.pathname = item.link }}
                           className={classNames(
-                            window.location.pathname == item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
+                            window.location.pathname === item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
                             'px-3 py-2 rounded-md text-sm font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
@@ -103,10 +105,10 @@ export default function Navbar() {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="#"
+                                href="/profile"
                                 className={classNames(
                                   active ? 'bg-gray-100 dark:bg-gray-800' : '',
-                                  'block px-4 py-2 text-sm text-gray-400 dark:text-400'
+                                  'block px-4 py-2 text-sm text-gray-500 dark:text-400'
                                 )}
                               >
                                 Your Profile
@@ -116,10 +118,10 @@ export default function Navbar() {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="#"
+                                href="/setting"
                                 className={classNames(
                                   active ? 'bg-gray-100 dark:bg-gray-800' : '',
-                                  'block px-4 py-2 text-sm text-gray-400 dark:text-400'
+                                  'block px-4 py-2 text-sm text-gray-500 dark:text-400'
                                 )}
                               >
                                 Settings
@@ -129,10 +131,10 @@ export default function Navbar() {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="#"
+                                href="/signOut"
                                 className={classNames(
                                   active ? 'bg-gray-100 dark:bg-gray-800' : '',
-                                  'block px-4 py-2 text-sm text-gray-400 dark:text-400'
+                                  'block px-4 py-2 text-sm text-gray-500 dark:text-400'
                                 )}
                               >
                                 Sign out
@@ -156,7 +158,7 @@ export default function Navbar() {
                     key={item.name}
                     onClick={() => {window.location.pathname = item.link }}
                     className={classNames(
-                      window.location.pathname == item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200',
+                      window.location.pathname === item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200',
                       'block px-3 py-2 rounded-md text-base font-medium'
                     )}
                     aria-current={item.current ? 'page' : undefined}
