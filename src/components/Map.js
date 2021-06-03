@@ -15,10 +15,20 @@ export default function Map() {
                     scrolling="no" 
                     marginheight="0" 
                     marginwidth="0" 
-                    title="Saaf-Water" 
-                    src="//www.arcgis.com/apps/Embed/index.html?webmap=fbadf2d08dd141aa8fbfe60a227e189b&extent=73.6904,14.9614,74.7046,15.5324&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light">
+                    title="Saaf-Water-light" 
+                    src="//www.arcgis.com/apps/Embed/index.html?webmap=fbadf2d08dd141aa8fbfe60a227e189b&extent=73.5435,15.0755,74.5577,15.6462&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light">
+            </iframe>
+            <iframe width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    title="Saaf-Water-Dark" 
+                    src="//www.arcgis.com/apps/Embed/index.html?webmap=3c0c2dc817994509b9d529f7000b3a85&extent=50.3459,3.4536,115.2531,38.1566&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=dark">
             </iframe>
         </div>
+
       </div>
     </div>
     ); 
