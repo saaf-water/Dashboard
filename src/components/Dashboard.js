@@ -1,5 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
+import Index from './index1'
+
 
 export default function Dashboard() {
   return (
@@ -9,7 +11,7 @@ export default function Dashboard() {
       
       <div class="flex flex-row">
         <div class="flex-auto lg:border lg:border-l border-t border-gray-300 dark:border-gray-700 lg:rounded-t-xl bg-white dark:bg-gray-800 h-screen relative overflow-auto no-scrollbar">
-          
+          <Index/>
         </div>
       </div>
     </div>
