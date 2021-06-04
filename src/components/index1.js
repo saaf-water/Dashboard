@@ -1,6 +1,12 @@
 import React from "react";
 import useThemeDetector from "./Map"
 import classNames from "./Map"
+import TDS from "./TDS"
+import ElectricalConductivity from "./electricalConductivity"
+import PH from "./pH"
+import Temperature from "./Temperature"
+import Turbidity from "./Turbidity"
+import CombinedChart from "./CombinedChart";
 function Index() {
     return (
         <>
@@ -39,28 +45,37 @@ function Index() {
 
                     </div>
                 </div>
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-                    {/*<!-- 1 card -->*/}
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-5">
+                    {/*<!-- 1 card TDS-->*/}
                     <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
-
-
+                    <TDS/> 
                     </div>
 
-                    {/*<!-- 2 card -->*/}
+                    {/*<!-- 2 card Turbidity-->*/}
                     <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
+                    <Turbidity/>
                     </div>
 
-                    {/*<!-- 3 card -->*/}
+                    {/*<!-- 3 card pH-->*/}
                     <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
+                    <PH/>
                     </div>
 
-                    {/*<!-- 4 card -->*/}
+                    {/*<!-- 4 card Electrical Conductivity-->*/}
                     <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
-
+                    <ElectricalConductivity/>
+                    </div>
+                    {/*<!-- 5 card Temperature-->*/}
+                    <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
+                    <Temperature/>
                     </div>
                 </div>
-                <div className="rounded border-gray-300 dark:border-gray-700 border-dashed border-2 h-24 w-screen" />
-            </div>
+                <div class= "relative mt-8 mb-8 h-max-50 w-full mt-8 mb-8" >
+                    <CombinedChart/>
+ 
+                </div>
+                <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"></div>
+                </div>
         </>
     );
 }
