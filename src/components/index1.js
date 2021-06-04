@@ -1,14 +1,34 @@
-import React from "react";
-import useThemeDetector from "./Map"
-import classNames from "./Map"
+import React, {useState, useEffect} from "react";
 import TDS from "./TDS"
 import ElectricalConductivity from "./electricalConductivity"
 import PH from "./pH"
 import Temperature from "./Temperature"
 import Turbidity from "./Turbidity"
 import CombinedChart from "./CombinedChart";
-function Index() {
+
+  function Index() {
+      
+const useThemeDetector = () => {
+    const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const [isDarkTheme, setIsDarkTheme] = useState(getCurrentTheme());  
+    const mqListener = (e => {
+        setIsDarkTheme(e.matches);
+    });
+    
+    useEffect(() => {
+      const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+      darkThemeMq.addListener(mqListener);
+      return () => darkThemeMq.removeListener(mqListener);
+    }, []);
+    return isDarkTheme;
+  }
+  
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
+
     return (
+        
         <>
             <div class="grid m-10 w-auto h-screen flex justify-center items-center " >
                 <div className="container grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
@@ -21,7 +41,7 @@ function Index() {
                                     <iframe
                                         class={classNames(useThemeDetector() ? 'hidden' : 'block', 'border-gray-300 lg:rounded-t-xl')}
                                         width="100%"
-                                        height="95%"
+                                        height="100%"
                                         frameborder="0"
                                         scrolling="no"
                                         marginheight="0"
@@ -29,6 +49,19 @@ function Index() {
                                         title="Saaf-Water-light"
                                         src="//www.arcgis.com/apps/Embed/index.html?webmap=fbadf2d08dd141aa8fbfe60a227e189b&extent=73.5435,15.0755,74.5577,15.6462&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light">
                                     </iframe>
+
+                                    <iframe
+                                        class={classNames(useThemeDetector() ? 'block' : 'hidden', 'border-gray-700 lg:rounded-t-xl')}
+                                        width="100%" 
+                                        height="100%" 
+                                        frameborder="0" 
+                                        scrolling="no" 
+                                        marginheight="0" 
+                                        marginwidth="0" 
+                                        title="Saaf-Water-Dark" 
+                                        src="//www.arcgis.com/apps/Embed/index.html?webmap=3c0c2dc817994509b9d529f7000b3a85&extent=50.3459,3.4536,115.2531,38.1566&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=dark">
+                                </iframe>
+
                                 </div>
                             </div>
 
