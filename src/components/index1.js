@@ -8,10 +8,10 @@ function Index() {
                 <div className="container grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
                     {/* Remove class [ h-24 ] when adding a card block */}
                     {/* Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border */}
-                    <div className="rounded border-gray-300  col-span-2 ">
+                    <div className="rounded border-gray-300  xl:col-span-2 ">
                         <div class="flex flex-row">
                             <div class="flex-auto justify-center items-center lg:border lg:border-l border-t border-gray-300 dark:border-gray-700 lg:rounded-t-xl bg-white dark:bg-gray-800 h-80 overflow-auto no-scrollbar">
-                                <div className="pb-8 lg:pb-5 flex items-start justify-center  w-screen  h-full">
+                                <div className="pb-8 lg:pb-5 flex items-start justify-center  w-full  h-full">
                                     <iframe
                                         class={classNames(useThemeDetector() ? 'hidden' : 'block', 'border-gray-300 lg:rounded-t-xl')}
                                         width="100%"
