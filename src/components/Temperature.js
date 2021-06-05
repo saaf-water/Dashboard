@@ -6,11 +6,11 @@ const data = {
     datasets: [
       {
         label: 'Temperature in Celsius',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [20, 25, 24, 20, 22, 21],
         fill: true,
         fillOpacity: 0.5,
-        backgroundColor: 'rgba(255, 10, 13, 0.1)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: 'rgba(26, 201, 230, 0.4)',
+        borderColor: 'rgba(23, 107, 160, 1.00)',
       },
     ],
 };
@@ -30,8 +30,8 @@ const options = {
 const Temperature = () => (
     <>
     <div className='header'>
-      <h5 className='title'>Temperature</h5>
-      <h1 class="">50 ppm</h1>
+      <h5 className='title text-gray-400 font-bold'>Temperature</h5>
+      <h1 class="font-extrabold text-4xl">50 ppm</h1>
       <div className='links'>
       </div>
     </div>
