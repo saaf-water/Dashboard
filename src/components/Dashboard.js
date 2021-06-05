@@ -1,19 +1,19 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Index from './index1'
+import HomeContent from './homeContent'
 
 
 export default function Dashboard() {
   return (
     <div className="font-roboto bg-gray-200 dark:bg-gray-900 h-screen overflow-hidden">
-      
-      <Navbar/>
-      
+
+      <Navbar />
+
       <div class="flex flex-row">
         <div class="flex-auto lg:border lg:border-l border-t border-gray-300 dark:border-gray-700 lg:rounded-t-xl bg-white dark:bg-gray-800 h-screen relative overflow-auto no-scrollbar">
-          <Index/>
+          <HomeContent />
         </div>
       </div>
     </div>
-    ); 
+  );
 }
