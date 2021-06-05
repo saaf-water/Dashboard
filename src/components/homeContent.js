@@ -97,8 +97,8 @@ export default function HomeContent() {
                 </div>
                 <div className=" hidden lg:block relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
                     <div className="p-4">
-                    <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">History </div>
-                    <CombinedChart />
+                        <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">History </div>
+                        <CombinedChart />
                     </div>
                 </div>
             </div>
