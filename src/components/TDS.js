@@ -6,7 +6,7 @@ const data = {
     datasets: [
       {
         label: 'TDS in ppm',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 9, 2, 10, 8, 7],
         fill: true,
         fillOpacity: 0.5,
         backgroundColor: 'rgba(123, 209, 82, 0.3)',
@@ -30,8 +30,8 @@ const options = {
 const TDS = () => (
     <>
     <div className='header'>
-      <h5 className='title'>TDS</h5>
-      <h1 class="">50 ppm</h1>
+      <h5 className='title text-gray-400 font-bold'>TDS</h5>
+      <h1 class="font-extrabold text-4xl">50 ppm</h1>
       <div className='links'>
       </div>
     </div>

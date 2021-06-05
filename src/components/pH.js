@@ -6,11 +6,11 @@ const data = {
     datasets: [
       {
         label: 'pH value',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [3, 5, 5, 6, 4, 2],
         fill: true,
         fillOpacity: 0.5,
-        backgroundColor: 'rgba(255, 10, 13, 0.1)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: 'rgba(231, 227, 78, 0.8)',
+        borderColor: 'rgb(234, 189, 59)',
       },
     ],
 };
@@ -30,8 +30,8 @@ const options = {
 const PH = () => (
     <>
     <div className='header'>
-      <h5 className='title'>pH</h5>
-      <h1 class="">6.4</h1>
+      <h5 className='title text-gray-400 font-bold'>pH</h5>
+      <h1 class="font-extrabold text-4xl">6.4</h1>
       </div>
     <Line data={data} options={options} />
     </>
