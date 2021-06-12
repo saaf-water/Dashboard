@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import React from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import firebaseConfig from "../config.js";
 
 var navigation = [
   { name: 'Dashboard', link: '/', current: true },
@@ -46,7 +47,7 @@ export default function Navbar() {
                     alt="Saaf water">
                     <span class="text-3xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
                     </a>
-                  <div />
+                  <div/>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -128,18 +129,12 @@ export default function Navbar() {
                               </a>
                             )}
                           </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="/signOut"
-                                className={classNames(
-                                  active ? 'bg-gray-100 dark:bg-gray-800' : '',
-                                  'block px-4 py-2 text-sm text-gray-500 dark:text-400'
-                                )}
-                              >
-                                Sign out
-                              </a>
-                            )}
+                          <Menu.Item> 
+                          {({ active }) => (
+                          <button className={classNames(
+                                  active ? 'bg-gray-100 dark:bg-gray-800 w-full text-left' : '',
+                                  'block px-4 py-2 text-sm text-left text-gray-500 dark:text-400 w-full')} onClick={() => firebaseConfig.auth().signOut()}>Sign out</button>
+                          )}
                           </Menu.Item>
                         </Menu.Items>
                       </Transition>
