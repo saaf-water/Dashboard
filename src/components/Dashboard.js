@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext }  from 'react'
 import Navbar from './Navbar'
 import HomeContent from './homeContent'
+import { Redirect } from "react-router-dom";
+import { AuthContext } from "./Auth";
 
 
-export default function Dashboard() {
+
+const Dashboard = () => {
+  const { currentUser } = useContext(AuthContext);
+  if (!currentUser) {
+    return <Redirect to = "/login"/>;
+  }
+
   return (
     <div className="font-roboto bg-gray-200 dark:bg-gray-900 h-screen overflow-hidden">
 
@@ -16,4 +24,5 @@ export default function Dashboard() {
       </div>
     </div>
   );
-}
+};
+export default Dashboard;

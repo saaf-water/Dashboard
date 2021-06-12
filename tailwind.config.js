@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         roboto: ['Roboto']
-      }
+      },
+      
     },
   },
   variants: {
