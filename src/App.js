@@ -7,7 +7,7 @@ import LogIn from "./components/Login";
 import SignUp from "./components/SignUp";
 import { AuthProvider } from "./components/Auth";
 import ForgotPassword from "./components/ForgotPassword";
-
+import Charts from "./components/Charts"
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
         <Switch>
            <Route path="/" component={Dashboard} exact/>
-           <Route path="/Charts" component={Dashboard}/>
+           <Route path="/Charts" component={Charts}/>
            <Route path="/labTest" component={Dashboard}/>
            <Route path="/Map" component={Map}/>
            <Route exact path="/login" component={LogIn} />
