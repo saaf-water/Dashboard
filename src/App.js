@@ -6,6 +6,7 @@ import Map from './components/Map'
 import LogIn from "./components/Login";
 import SignUp from "./components/SignUp";
 import { AuthProvider } from "./components/Auth";
+import ForgotPassword from "./components/ForgotPassword";
 
 
 
@@ -20,6 +21,7 @@ function App() {
            <Route path="/Map" component={Map}/>
            <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route path="/ForgotPassword" component={ForgotPassword} />
        </Switch>
     </BrowserRouter>
     </AuthProvider>
