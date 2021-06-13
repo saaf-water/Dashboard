@@ -1,5 +1,4 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
-import App from './../App'
 import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "./Auth";
@@ -31,7 +30,7 @@ if (currentUser) {
                 <div className="flex-shrink-0 flex items-center">
                   <a
                     href="/"
-                    className="text-5xl font-thin text-gray-600 dark:text-gray-300 hidden lg:block h-8 w-auto"
+                    className="text-5xl font-thin text-gray-600 dark:text-gray-300 h-8 w-auto"
                     alt="Saaf water">
                     <span class="text-5xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
                     </a>
@@ -86,7 +85,7 @@ if (currentUser) {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+              <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                 Forgot your password?
               </a>
             </div>
@@ -110,7 +109,7 @@ if (currentUser) {
             </div>
         </form>
       </div>
-      <div className="w-full space-y-8 h-screen ml-8 border-gray-500 rounded-xl" ><img src= "https://i2.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2019/09/image1.jpg" className="w-screen h-screen rounded-xl" alt="Water"/></div>
+      <div className="w-full space-y-8 h-screen ml-8 border-gray-500 rounded-xl hidden lg:block" ><img src= "https://i2.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2019/09/image1.jpg" className="w-screen h-screen rounded-xl" alt="Water"/></div>
     </div>
   );
 };

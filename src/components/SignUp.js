@@ -96,7 +96,7 @@ const SignUp = () => {
             </div>
       </form>
     </div>
-      <div className="w-full space-y-8 h-screen ml-8 border-gray-500 rounded-xl" ><img src= "https://i2.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2019/09/image1.jpg" className="w-screen h-screen rounded-xl" alt="Water"/></div>
+      <div className="w-full space-y-8 h-screen ml-8 border-gray-500 rounded-xl hidden lg:block" ><img src= "https://i2.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2019/09/image1.jpg" className="w-screen h-screen rounded-xl" alt="Water"/></div>
       </div>
 
     
