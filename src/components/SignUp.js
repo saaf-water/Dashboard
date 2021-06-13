@@ -8,7 +8,11 @@ const SignUp = () => {
     e.preventDefault();    
     const { email, password } = e.target.elements;
     try {
-      firebaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value);      
+      firebaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value).then((userCredential)=>{
+        userCredential.user.sendEmailVerification();
+        firebaseConfig.auth().signOut();
+        alert("Email Sent for verification");
+      });      
       setCurrentUser(true);
     } catch (error) {
       alert(error);
