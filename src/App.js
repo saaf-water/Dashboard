@@ -6,6 +6,8 @@ import Map from './components/Map'
 import LogIn from "./components/Login";
 import SignUp from "./components/SignUp";
 import { AuthProvider } from "./components/Auth";
+import ForgotPassword from "./components/ForgotPassword";
+import Charts from "./components/Charts"
 
 
 function App() {
