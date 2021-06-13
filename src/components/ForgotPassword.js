@@ -1,6 +1,6 @@
 import React from 'react'
 import firebaseConfig from "../config.js";
-import { Redirect } from "react-router-dom";
+
 
 function ForgotPassword() {
     const forgotSubmit = (e) => {
