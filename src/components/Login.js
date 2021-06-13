@@ -1,5 +1,4 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
-import App from './../App'
 import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "./Auth";
@@ -86,7 +85,7 @@ if (currentUser) {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+              <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                 Forgot your password?
               </a>
             </div>
