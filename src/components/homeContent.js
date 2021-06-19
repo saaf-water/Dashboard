@@ -31,7 +31,7 @@ export default function HomeContent() {
     return (
 
         <>
-        <div className="flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
+        <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
                 <div className="flex flex-wrap -m-4 order-last lg:order-first">
                     <div className="p-4 w-full lg:w-2/4 xl:w-3/5">
                         <div className="flex flex-row">
