@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
 import firebaseConfig from "../config"
-import covervid from "./Asset/Saaf-water-low.mp4"
 import coverimg from "./Asset/Water.jpg"
 
 const SignUp = () => {
@@ -135,7 +134,7 @@ const SignUp = () => {
 
       </div>
       <video autoPlay loop muted className="filter brightness-75 absolute z-0 w-auto min-w-full min-h-full max-w-none">
-        <source src={covervid} poster={coverimg}   type="video/mp4"></source>
+        <source src="https://www.dropbox.com/s/q6pl6f5o0jap3dx/Saaf-water-low.webm?raw=1" poster={coverimg}   type="video/mp4"></source>
         Your browser does not support the video tag.
       </video>
     </div>
