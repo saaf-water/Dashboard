@@ -3,7 +3,6 @@ import React, { useContext } from "react"
 import { Redirect } from "react-router-dom"
 import { AuthContext } from "./Auth"
 import firebaseConfig from "../config.js"
-import covervid from "./Asset/Saaf-water-low.mp4"
 import coverimg from "./Asset/Water.jpg"
 
 const LogIn = () => {
@@ -114,7 +113,7 @@ const LogIn = () => {
                 </div>
                 <div className="flex justify-center text-xs md:text-sm">
                   <a href="/SignUp" className="font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-700    ">
-                    Didn't signup yet?
+                    Don't have an account? Sign Up Now!
                   </a>
                 </div>
               </form>
@@ -124,7 +123,7 @@ const LogIn = () => {
 
       </div>
       <video autoPlay loop muted className="filter brightness-75 absolute z-0 w-auto min-w-full min-h-full max-w-none">
-        <source src={covervid} poster={coverimg} type="video/mp4"></source>
+        <source src="https://www.dropbox.com/s/q6pl6f5o0jap3dx/Saaf-water-low.webm?raw=1" poster={coverimg} type="video/mp4"></source>
         Your browser does not support the video tag.
       </video>
     </div>
