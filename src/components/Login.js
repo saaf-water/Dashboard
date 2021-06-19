@@ -3,7 +3,7 @@ import React, { useContext } from "react"
 import { Redirect } from "react-router-dom"
 import { AuthContext } from "./Auth"
 import firebaseConfig from "../config.js"
-import coverimg from "./Asset/Water.jpg"
+import coverimg from "./Asset/poster.webp"
 
 const LogIn = () => {
   const handleSubmit = (e) => {
@@ -122,8 +122,8 @@ const LogIn = () => {
         </div>
 
       </div>
-      <video autoPlay loop muted className="filter brightness-75 absolute z-0 w-auto min-w-full min-h-full max-w-none">
-        <source src="https://www.dropbox.com/s/q6pl6f5o0jap3dx/Saaf-water-low.webm?raw=1" poster={coverimg} type="video/mp4"></source>
+      <video autoPlay poster={coverimg} loop muted className="filter brightness-75 absolute z-0 w-auto min-w-full min-h-full max-w-none">
+        <source src="https://www.dropbox.com/s/q6pl6f5o0jap3dx/Saaf-water-low.webm?raw=1" type="video/mp4"></source>
         Your browser does not support the video tag.
       </video>
     </div>
