@@ -23,7 +23,7 @@ const LogIn = () => {
 
 
   return (
-    <div class="font-roboto relative flex items-center justify-center h-screen mb-12 overflow-hidden p-2 ">
+    <div class="font-roboto relative flex items-center justify-center h-screen mb-0 overflow-hidden p-2">
       <div class="relative z-40 backdrop-filter backdrop-blur-sm p-5 bg-gray-200 dark:bg-gray-900 bg-opacity-60 shadow-lg rounded-xl">
         <div className="container mx-auto">
           <div className="flex flex-row items-center sm:justify-center lg:justify-start py-2 pl-2 pr-1 sm:px-6 lg:px-8 " >
