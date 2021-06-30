@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
   if (loading) {
     return(
-    <div className="align-center justify-center flex">Loading...</div>
+    <div className="font-roboto align-center justify-center flex">Hang on, Please</div>
     );
      
   }
