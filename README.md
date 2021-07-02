@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# saaf-water Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+saaf-water is a network of active devices installed at various water sources, it shows the latest metrics of water quality like TDS, turbidity, pH, Electrical conductivity, temperature, pathogen presence and a simple to understand Water quality summary and map which shows the water status, recommend use, and suggestions before usage. We believe that an open-source, free to use, community monitored data on climate can help tackle it.
 
-## Available Scripts
+saaf-water Dashboard can be used by local authorities to monitor various aspects of data about water quality and they can also check predicted data powered by Machine Learning.
 
-In the project directory, you can run:
+We're also using this 'saaf-water Dashboard' to notify water-quality and how to improve / take precautions the end user via website, SMS, Whatsapp.
 
-### `npm start`
+## Contribution Guide
+### How to Build - 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+git clone https://github.com/saaf-water/Dashboard.git
+npm install
+npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm start` runs the app in the development mode.  
+Open [http://localhost:3000](http://localhost:3000/) to view it in the browser.
 
-### `npm test`
+### How to Contribute
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Thank you for your interest in contributing to saaf-water! Before you begin writing code, it is important that you share your intention to contribute with the team, based on the type of contribution:
 
-### `npm run build`
+1.  You want to propose a new feature and implement it.
+    -   Post about your intended feature in an [issue](https://github.com/saaf-water/Dashboard/issues), and we shall discuss the design and implementation. Once we agree that the plan looks good, go ahead and implement it.
+2.  You want to implement a feature or bug-fix for an outstanding issue.
+    -   Search for your issue in the [saaf-water Dashboard issue list](https://github.com/saaf-water/Dashboard/issues).
+    -   Pick an issue and comment that you'd like to work on the feature or bug-fix.
+    -   If you need more context on a particular issue, please ask and we shall provide.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once you implement and test your feature or bug-fix, please submit a Pull Request to [https://github.com/saaf-water/Dashboard](https://github.com/saaf-water/Dashboard).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project reviewers at this time are :
+- [msanket9](https://github.com/msanket9)
+- [Hrishikesh24](https://github.com/Hrishikesh24)
+- [ManikantaChavvakula7](https://github.com/ManikantaChavvakula7)
+- [jehhhh](https://github.com/jehhhh) 
