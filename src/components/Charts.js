@@ -1,17 +1,17 @@
 import React, { useContext } from 'react'
 import Navbar from './Navbar'
 import { Redirect } from "react-router-dom";
-import { AuthContext } from "./Auth";
+//import { AuthContext } from "./Auth";
 import ChartContent from './ChartContent';
 
-
-const Dashboard = () => {
+/*const Dashboard = () => {
   const { currentUser } = useContext(AuthContext);
   if (!currentUser) {
     return <Redirect to = "/login"/>;
-  }
+  }*/
 
-  return (
+export default function Charts() {
+ return (
     <div className="font-roboto bg-gray-200 dark:bg-gray-900 h-screen overflow-hidden">
 
       <Navbar />
@@ -24,4 +24,3 @@ const Dashboard = () => {
     </div>
   );
 };
-export default Dashboard;
