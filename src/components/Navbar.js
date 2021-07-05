@@ -6,9 +6,9 @@ import firebaseConfig from "../config.js";
 
 var navigation = [
   { name: 'Dashboard', link: '/', current: true },
-  { name: 'Charts', link: '/Charts', current: false },
+  { name: 'Charts', link: '/charts', current: false },
   { name: 'Lab Tests', link: '/labTest', current: false },
-  { name: 'Map', link: '/Map', current: false },
+  { name: 'Map', link: '/map', current: false },
 ]
 
 function classNames(...classes) {
@@ -40,14 +40,14 @@ export default function Navbar() {
                     className="text-2xl font-thin text-gray-600 dark:text-gray-300 lg:hidden h-8 w-auto"
                     alt="Saaf water">
                     <span class="text-2xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
-                    </a>
+                  </a>
                   <a
                     href="/"
                     className="text-3xl font-thin text-gray-600 dark:text-gray-300 hidden lg:block h-8 w-auto"
                     alt="Saaf water">
                     <span class="text-3xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
-                    </a>
-                  <div/>
+                  </a>
+                  <div />
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -57,8 +57,8 @@ export default function Navbar() {
                           key={item.name}
                           onClick={() => { window.location.pathname = item.link }}
                           className={classNames(
-                            window.location.pathname === item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
-                            'px-3 py-2 rounded-md text-sm font-medium'
+                            window.location.pathname === item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700 cursor-pointer' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
+                            'px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >
@@ -129,12 +129,12 @@ export default function Navbar() {
                               </a>
                             )}
                           </Menu.Item>
-                          <Menu.Item> 
-                          {({ active }) => (
-                          <button className={classNames(
-                                  active ? 'bg-gray-100 dark:bg-gray-800 w-full text-left' : '',
-                                  'block px-4 py-2 text-sm text-left text-gray-500 dark:text-400 w-full')} onClick={() => firebaseConfig.auth().signOut()}>Sign out</button>
-                          )}
+                          <Menu.Item>
+                            {({ active }) => (
+                              <button className={classNames(
+                                active ? 'bg-gray-100 dark:bg-gray-800 w-full text-left' : '',
+                                'block px-4 py-2 text-sm text-left text-gray-500 dark:text-400 w-full')} onClick={() => firebaseConfig.auth().signOut()}>Sign out</button>
+                            )}
                           </Menu.Item>
                         </Menu.Items>
                       </Transition>
