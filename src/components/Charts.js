@@ -1,8 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Navbar from './Navbar'
-import { Redirect } from "react-router-dom";
-//import { AuthContext } from "./Auth";
 import ChartContent from './ChartContent';
+// import React, { useContext } from 'react'
+// import { Redirect } from "react-router-dom";
+// import { AuthContext } from "./Auth";
+
 
 /*const Dashboard = () => {
   const { currentUser } = useContext(AuthContext);
