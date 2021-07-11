@@ -1,31 +1,38 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-
+import Charts from "./components/Charts"
 import Dashboard from './components/Dashboard'
 import Map from './components/Map'
-import LogIn from "./components/Login";
-import SignUp from "./components/SignUp";
-import { AuthProvider } from "./components/Auth";
-import ForgotPassword from "./components/ForgotPassword";
-import Charts from "./components/Charts"
+import Navbar from './components/Navbar'
+
+// import LogIn from "./components/Login"
+// import SignUp from "./components/SignUp"
+// import { AuthProvider } from "./components/Auth"
+// import ForgotPassword from "./components/ForgotPassword"
+
 
 
 function App() {
   return (
-    <AuthProvider>
+    //<AuthProvider>
+
     <BrowserRouter>
+      <div className="font-roboto bg-gray-200 dark:bg-gray-900 h-screen overflow-hidden">
+        <Navbar />
         <Switch>
-           <Route path="/" component={Dashboard} exact/>
-           <Route path="/Charts" component={Charts}/>
-           <Route path="/labTest" component={Dashboard}/>
-           <Route path="/Map" component={Map}/>
-           <Route exact path="/login" component={LogIn} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route path="/ForgotPassword" component={ForgotPassword} />
-       </Switch>
+          <Route path="/" component={Dashboard} exact />
+          <Route path="/charts" component={Charts} />
+          <Route path="/labTest" component={Dashboard} />
+          <Route path="/map" component={Map} />
+        </Switch>
+      </div>
     </BrowserRouter>
-    </AuthProvider>
+    //</AuthProvider>
   );
 }
 
 export default App;
+
+/*<Route exact path="/login" component={LogIn} />
+<Route exact path="/signup" component={SignUp} />
+<Route path="/ForgotPassword" component={ForgotPassword} />*/

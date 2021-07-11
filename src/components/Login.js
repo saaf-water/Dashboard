@@ -120,7 +120,6 @@ const LogIn = () => {
             </div>
           </div>
         </div>
-
       </div>
       <video autoPlay poster={coverimg} loop muted className="filter brightness-75 absolute z-0 w-auto min-w-full min-h-full max-w-none">
         <source src="https://www.dropbox.com/s/q6pl6f5o0jap3dx/Saaf-water-low.webm?raw=1" type="video/mp4"></source>

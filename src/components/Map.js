@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar'
 
 const useThemeDetector = () => {
   const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -22,9 +21,7 @@ function classNames(...classes) {
 
 export default function Map() {
   return (
-    <div className="font-roboto bg-gray-200 dark:bg-gray-900 h-screen overflow-hidden">
-
-      <Navbar />
+    <div className="font-roboto">
 
 
 
