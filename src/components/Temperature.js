@@ -72,7 +72,6 @@ const Temperature = () => {
             <Skeleton count={3}/>
           </p>
         </SkeletonTheme> 
-        
       )}
     </>
   );
