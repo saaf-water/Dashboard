@@ -31,7 +31,7 @@ const PH = () => (
   <>
     <div className='header text-black dark:text-white'>
       <h5 className='title text-gray-400 dark:text-gray-400 font-bold'>pH</h5>
-      <h1 class="font-extrabold text-4xl">6.4</h1>
+      <h1 class="font-extrabold text-4xl">6.9</h1>
     </div>
     <Line data={data} options={options} />
   </>
