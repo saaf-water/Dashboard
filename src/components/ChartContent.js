@@ -20,14 +20,15 @@ export default function ChartContent() {
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
                             <Turbidity />
                         </div>
-                        <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+                        <div className="p-6 w-full lg:w-1/
+                        6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
                             <PH />
                         </div>
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
                             <ElectricalConductivity />
                         </div>
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <Temperature />
+                            <Temperature/>
                         </div>
                     </div>
                 </div>
