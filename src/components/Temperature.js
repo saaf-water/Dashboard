@@ -64,7 +64,6 @@ const Temperature = () => {
         </h1> 
         <div className="links"></div>
       </div>
-      {/* Check if lastMesage is null, if not show the data. */}
       {history.lastJsonMessage ? (
         <Graph graphData={history.lastJsonMessage} />
       ) : (
@@ -72,7 +71,7 @@ const Temperature = () => {
           <p>
             <Skeleton count={3}/>
           </p>
-        </SkeletonTheme> // Better add some loading animation here.
+        </SkeletonTheme> 
         
       )}
     </>
