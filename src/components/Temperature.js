@@ -30,7 +30,6 @@ const Graph = (graphData) => {
     }
   };
 
-  // {"date":"2021-07-16T19:15:19.127Z","time":1626462919127,"temperature":28,"humidity":55}
   graphData.graphData.hist.map((item) => {
     data.datasets[0].data.push(item.temperature);
     return 0;
@@ -53,16 +52,16 @@ const Temperature = () => {
 
   useEffect(() => {
     console.log("Sending Message on Component Mount");
-    history.sendMessage("Get Data");
     current.sendMessage("Get Data");
-  });
+    setTimeout(() => {  history.sendMessage("Get Data"); }, 2000);
 
-  // for every 30mins
-  setInterval(() => {
-    console.log("Sending Message");
-    history.sendMessage("Get Data");
-    current.sendMessage("Get Data");
-  }, 1800000);
+    //Every 30 Mins
+    setInterval(() => {
+      console.log("Sending Message");
+      current.sendMessage("Get Data");
+      setTimeout(() => {  history.sendMessage("Get Data"); }, 2000);
+    }, 1800000);
+  }, []);
 
   return (
     <>
