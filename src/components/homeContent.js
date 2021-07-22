@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import useWebSocket from "react-use-websocket";
+
 import TDS from "./../components/Charts/Graphs/TDS"
 import ElectricalConductivity from "./../components/Charts/Graphs/electricalConductivity"
 import PH from "./../components/Charts/Graphs/pH"
 import Temperature from "./../components/Charts/Graphs/Temperature"
 import Turbidity from "./../components/Charts/Graphs/Turbidity"
-import CombinedChart from "./../components/Charts/CombinedChart";
+import CombinedChart from "./Charts/History";
 
 var waterSummary = { type: 'Good', boilParam: 'Good boiling required before cosumption', altUse: 'Water suitable for direct domestic usage' }
 
@@ -28,6 +30,35 @@ function classNames(...classes) {
 }
 
 export default function HomeContent() {
+    const [socketUrl] = useState(
+        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/history"
+      );
+    
+      const [socketCurrentUrl] = useState(
+        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716"
+      );
+    
+      const history = useWebSocket(socketUrl);
+      const current = useWebSocket(socketCurrentUrl);
+    
+      useEffect(() => {
+        console.log("Sending Message on Component Mount");
+        current.sendMessage("Get Data");
+        setTimeout(() => {
+          history.sendMessage("Get Data");
+        }, 2000);
+    
+        //Every 30 Mins
+        setInterval(() => {
+          console.log("Sending Message");
+          current.sendMessage("Get Data");
+          setTimeout(() => {
+            history.sendMessage("Get Data");
+          }, 2000);
+        }, 60000);
+        // eslint-disable-next-line
+      }, []);
+
     return (
 
         <>
@@ -79,19 +110,19 @@ export default function HomeContent() {
                 <div className="flex flex-wrap -m-4 overflow-x-auto">
                     <div className="flex justify-center flex-row p-4 lg:w-full">
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <TDS />
+                            <TDS current={current} history={history} />
                         </div>
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <Turbidity />
+                            <Turbidity current={current} history={history} />
                         </div>
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <PH />
+                            <PH current={current} history={history} />
                         </div>
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <ElectricalConductivity />
+                            <ElectricalConductivity current={current} history={history} />
                         </div>
                         <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <Temperature />
+                            <Temperature current={current} history={history} />
                         </div>
                     </div>
                 </div>

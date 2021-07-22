@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import useWebSocket from "react-use-websocket";
+import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
 
@@ -38,32 +37,7 @@ const Graph = (graphData) => {
   return <Line data={data} options={options} />;
 };
 
-const Temperature = () => {
-  const [socketUrl] = useState(
-    "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/history"
-  );
-
-  const [socketCurrentUrl] = useState(
-    "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716"
-  );
-
-  const history = useWebSocket(socketUrl);
-  const current = useWebSocket(socketCurrentUrl);
-
-  useEffect(() => {
-    console.log("Sending Message on Component Mount");
-    current.sendMessage("Get Data");
-    setTimeout(() => {  history.sendMessage("Get Data"); }, 2000);
-
-    //Every 30 Mins
-    setInterval(() => {
-      console.log("Sending Message");
-      current.sendMessage("Get Data");
-      setTimeout(() => {  history.sendMessage("Get Data"); }, 2000);
-    }, 1800000);
-  // eslint-disable-next-line
-  }, []);
-
+const Temperature = ({ current, history }) => {
   return (
     <>
       <div className="header text-black dark:text-white">
