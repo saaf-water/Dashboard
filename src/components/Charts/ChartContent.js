@@ -1,9 +1,9 @@
 import React from "react";
-import TDS from "./TDS"
-import ElectricalConductivity from "./electricalConductivity"
-import PH from "./pH"
-import Temperature from "./Temperature"
-import Turbidity from "./Turbidity"
+import TDS from "./Graphs/TDS"
+import ElectricalConductivity from "./Graphs/electricalConductivity"
+import PH from "./Graphs/pH"
+import Temperature from "./Graphs/Temperature"
+import Turbidity from "./Graphs/Turbidity"
 import CombinedChart from "./CombinedChart";
 
 

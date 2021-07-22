@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Charts from "./components/Charts"
+import Charts from "./components/Charts/Charts"
 import Dashboard from './components/Dashboard'
 import Map from './components/Map'
 import Navbar from './components/Navbar'
