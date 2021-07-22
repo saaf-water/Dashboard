@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import TDS from "./TDS"
-import ElectricalConductivity from "./electricalConductivity"
-import PH from "./pH"
-import Temperature from "./Temperature"
-import Turbidity from "./Turbidity"
-import CombinedChart from "./CombinedChart";
+import TDS from "./../components/Charts/Graphs/TDS"
+import ElectricalConductivity from "./../components/Charts/Graphs/electricalConductivity"
+import PH from "./../components/Charts/Graphs/pH"
+import Temperature from "./../components/Charts/Graphs/Temperature"
+import Turbidity from "./../components/Charts/Graphs/Turbidity"
+import CombinedChart from "./../components/Charts/CombinedChart";
 
 var waterSummary = { type: 'Good', boilParam: 'Good boiling required before cosumption', altUse: 'Water suitable for direct domestic usage' }
 

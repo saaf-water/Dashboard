@@ -1,5 +1,5 @@
 import React from 'react'
-import firebaseConfig from "../config.js";
+import firebaseConfig from "../../config.js";
 
 
 function ForgotPassword() {

@@ -61,6 +61,7 @@ const Temperature = () => {
       current.sendMessage("Get Data");
       setTimeout(() => {  history.sendMessage("Get Data"); }, 2000);
     }, 1800000);
+  // eslint-disable-next-line
   }, []);
 
   return (
