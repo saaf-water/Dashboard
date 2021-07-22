@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
@@ -51,17 +51,30 @@ const Temperature = () => {
   const history = useWebSocket(socketUrl);
   const current = useWebSocket(socketCurrentUrl);
 
+  useEffect(() => {
+    console.log("Sending Message on Component Mount");
+    history.sendMessage("Get Data");
+    current.sendMessage("Get Data");
+  });
+
+  // for every 30mins
+  setInterval(() => {
+    console.log("Sending Message");
+    history.sendMessage("Get Data");
+    current.sendMessage("Get Data");
+  }, 1800000);
+
   return (
     <>
       <div className="header text-black dark:text-white">
         <h5 className="title text-gray-400 dark:text-gray-400 font-bold">
-          Temperature 
+          Temperature
         </h5>
         <h1 className="font-extrabold text-4xl">
           {current.lastJsonMessage
-            ? (current.lastJsonMessage.temperature+"°C")
+            ? current.lastJsonMessage.temperature + "°C"
             : "Loading..."}
-        </h1> 
+        </h1>
         <div className="links"></div>
       </div>
       {history.lastJsonMessage ? (
@@ -69,9 +82,9 @@ const Temperature = () => {
       ) : (
         <SkeletonTheme color="#202020" highlightColor="#444">
           <p>
-            <Skeleton count={3}/>
+            <Skeleton count={3} />
           </p>
-        </SkeletonTheme> 
+        </SkeletonTheme>
       )}
     </>
   );
