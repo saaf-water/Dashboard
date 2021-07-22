@@ -18,7 +18,7 @@ const Summary = ({ current }) => {
                 return (
                     <>
                         <div className="justify-self-start font-roboto-semibold text-white text-xl py-5">Water Quality Summary </div>
-                        <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">Good</div>
+                        <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">Decent</div>
                         <div className="justify-self-start text-black-900 font-bold p-2">+ Good boiling required before cosumption</div>
                         <div className="justify-self-start text-black-900 font-bold p-2">+ Water suitable for direct domestic usage</div>
                     </>
@@ -27,18 +27,18 @@ const Summary = ({ current }) => {
                 return (
                     <>
                         <div className="justify-self-start font-roboto-semibold text-white text-xl py-5">Water Quality Summary </div>
-                        <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">Good</div>
+                        <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">Bad</div>
                         <div className="justify-self-start text-black-900 font-bold p-2">+ Good boiling required before cosumption</div>
-                        <div className="justify-self-start text-black-900 font-bold p-2">+ Water suitable for direct domestic usage</div>
+                        <div className="justify-self-start text-black-900 font-bold p-2">+ Water not suitable for direct domestic usage</div>
                     </>
                 )
             }else {
                 return (
                     <>
                         <div className="justify-self-start font-roboto-semibold text-white text-xl py-5">Water Quality Summary </div>
-                        <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">Good</div>
+                        <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">Danger!!</div>
                         <div className="justify-self-start text-black-900 font-bold p-2">+ Good boiling required before cosumption</div>
-                        <div className="justify-self-start text-black-900 font-bold p-2">+ Water suitable for direct domestic usage</div>
+                        <div className="justify-self-start text-black-900 font-bold p-2">+ Hazardous</div>
                     </>
                 )
             }
