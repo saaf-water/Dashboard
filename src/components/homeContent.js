@@ -55,7 +55,7 @@ export default function HomeContent() {
           setTimeout(() => {
             history.sendMessage("Get Data");
           }, 2000);
-        }, 60000);
+        }, 1800000);
         // eslint-disable-next-line
       }, []);
 
