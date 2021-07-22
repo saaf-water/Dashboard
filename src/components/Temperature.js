@@ -30,7 +30,6 @@ const Graph = (graphData) => {
     }
   };
 
-  // {"date":"2021-07-16T19:15:19.127Z","time":1626462919127,"temperature":28,"humidity":55}
   graphData.graphData.hist.map((item) => {
     data.datasets[0].data.push(item.temperature);
     return 0;
