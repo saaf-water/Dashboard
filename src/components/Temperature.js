@@ -53,16 +53,16 @@ const Temperature = () => {
 
   useEffect(() => {
     console.log("Sending Message on Component Mount");
-    history.sendMessage("Get Data");
     current.sendMessage("Get Data");
-  });
+    setTimeout(() => {  history.sendMessage("Get Data"); }, 2000);
 
-  // for every 30mins
-  setInterval(() => {
-    console.log("Sending Message");
-    history.sendMessage("Get Data");
-    current.sendMessage("Get Data");
-  }, 1800000);
+    //Every 30 Mins
+    setInterval(() => {
+      console.log("Sending Message");
+      current.sendMessage("Get Data");
+      setTimeout(() => {  history.sendMessage("Get Data"); }, 2000);
+    }, 1800000);
+  }, []);
 
   return (
     <>
