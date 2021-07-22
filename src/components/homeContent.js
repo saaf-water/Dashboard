@@ -6,9 +6,11 @@ import ElectricalConductivity from "./../components/Charts/Graphs/electricalCond
 import PH from "./../components/Charts/Graphs/pH"
 import Temperature from "./../components/Charts/Graphs/Temperature"
 import Turbidity from "./../components/Charts/Graphs/Turbidity"
+
+import Summary from "./Summary";
 import CombinedChart from "./Charts/History";
 
-var waterSummary = { type: 'Good', boilParam: 'Good boiling required before cosumption', altUse: 'Water suitable for direct domestic usage' }
+
 
 const useThemeDetector = () => {
     const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -30,6 +32,7 @@ function classNames(...classes) {
 }
 
 export default function HomeContent() {
+
     const [socketUrl] = useState(
         "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/history"
       );
@@ -56,6 +59,7 @@ export default function HomeContent() {
             history.sendMessage("Get Data");
           }, 2000);
         }, 1800000);
+
         // eslint-disable-next-line
       }, []);
 
@@ -98,10 +102,7 @@ export default function HomeContent() {
                     <div className="order-first lg:order-last p-4 w-full lg:w-2/4 xl:w-2/5">
                         <div className={classNames(useThemeDetector() ? 'bg-gradient-to-br from-green-500 to-blue-300' : 'bg-gradient-to-br from-green-400 to-yellow-200', 'h-96 rounded-xl')}>
                             <div className="p-4">
-                                <div className="justify-self-start font-roboto-semibold text-white text-xl py-5">Water Quality Summary </div>
-                                <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">{waterSummary[Object.keys(waterSummary)[0]]}</div>
-                                <div className="justify-self-start text-black-900 font-bold p-2">+ {waterSummary[Object.keys(waterSummary)[1]]}</div>
-                                <div className="justify-self-start text-black-900 font-bold p-2">+ {waterSummary[Object.keys(waterSummary)[2]]}</div>
+                                <Summary current={current} />
                             </div>
 
                         </div>
