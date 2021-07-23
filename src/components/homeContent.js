@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import TDS from "./TDS"
-import ElectricalConductivity from "./electricalConductivity"
-import PH from "./pH"
-import Temperature from "./Temperature"
-import Turbidity from "./Turbidity"
-import CombinedChart from "./CombinedChart";
+import useWebSocket from "react-use-websocket";
 
-var waterSummary = { type: 'Good', boilParam: 'Good boiling required before cosumption', altUse: 'Water suitable for direct domestic usage' }
+import TDS from "./../components/Charts/Graphs/TDS"
+import ElectricalConductivity from "./../components/Charts/Graphs/electricalConductivity"
+import PH from "./../components/Charts/Graphs/pH"
+import Temperature from "./../components/Charts/Graphs/Temperature"
+import Turbidity from "./../components/Charts/Graphs/Turbidity"
+import Table from "./Table"
+
+import Summary from "./Summary";
+import CombinedChart from "./Charts/History";
+
 
 const useThemeDetector = () => {
     const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -28,10 +32,52 @@ function classNames(...classes) {
 }
 
 export default function HomeContent() {
+
+    const [socketUrl] = useState(
+        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/history"
+    );
+
+    const [socketCurrentUrl] = useState(
+        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716"
+    );
+    const [socketUrlMax] = useState(
+        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/historyMax"
+    );
+
+    const historyMax = useWebSocket(socketUrlMax);
+    const history = useWebSocket(socketUrl);
+    const current = useWebSocket(socketCurrentUrl);
+
+    useEffect(() => {
+        console.log("Sending Message on Component Mount");
+        current.sendMessage("Get Data");
+        setTimeout(() => {
+            history.sendMessage("Get Data");
+        }, 1000);
+        setTimeout(() => {
+            historyMax.sendMessage("Get Data");
+        }, 1000);
+
+        //Every 30 Mins
+        setInterval(() => {
+            console.log("Sending Message");
+            current.sendMessage("Get Data");
+            setTimeout(() => {
+                history.sendMessage("Get Data");
+            }, 2000);
+            setTimeout(() => {
+                historyMax.sendMessage("Get Data");
+            }, 1000);
+
+        }, 1800000);
+
+        // eslint-disable-next-line
+    }, []);
+
     return (
 
         <>
-        <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
+            <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
                 <div className="flex flex-wrap -m-4 order-last lg:order-first">
                     <div className="p-4 w-full lg:w-2/4 xl:w-3/5">
                         <div className="flex flex-row">
@@ -64,41 +110,43 @@ export default function HomeContent() {
                             </div>
                         </div>
                     </div>
-                    <div className="order-first lg:order-last p-4 w-full lg:w-2/4 xl:w-2/5">
-                        <div className={classNames(useThemeDetector() ? 'bg-gradient-to-br from-green-500 to-blue-300' : 'bg-gradient-to-br from-green-400 to-yellow-200', 'h-96 rounded-xl')}>
-                            <div className="p-4">
-                                <div className="justify-self-start font-roboto-semibold text-white text-xl py-5">Water Quality Summary </div>
-                                <div className="justify-self-start content-center font-roboto font-extrabold text-white text-6xl pb-5">{waterSummary[Object.keys(waterSummary)[0]]}</div>
-                                <div className="justify-self-start text-black-900 font-bold p-2">+ {waterSummary[Object.keys(waterSummary)[1]]}</div>
-                                <div className="justify-self-start text-black-900 font-bold p-2">+ {waterSummary[Object.keys(waterSummary)[2]]}</div>
-                            </div>
-
-                        </div>
+                    <div className="order-first p-4 w-full lg:w-2/4 xl:w-2/5">
+                        <Summary current={current} />
                     </div>
                 </div>
                 <div className="flex flex-wrap -m-4 overflow-x-auto">
                     <div className="flex justify-center flex-row p-4 lg:w-full">
-                        <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <TDS />
+                        <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+                            <TDS current={current} history={history} />
                         </div>
-                        <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <Turbidity />
+                        <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+                            <Turbidity current={current} history={history} />
                         </div>
-                        <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <PH />
+                        <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+                            <PH current={current} history={history} />
                         </div>
-                        <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <ElectricalConductivity />
+                        <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+                            <ElectricalConductivity current={current} history={history} />
                         </div>
-                        <div className="p-6 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-                            <Temperature />
+                        <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+                            <Temperature current={current} history={history} />
                         </div>
                     </div>
                 </div>
-                <div className=" hidden lg:block relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                    <div className="p-4">
-                        <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">History </div>
-                        <CombinedChart />
+                <div className="pb-5">
+                    <div className=" w-full lg:w-2/3 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
+                        <div className="p-4">
+                            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">History </div>
+                            <Table historyMax={historyMax} />
+                        </div>
+                    </div>
+                </div>
+                <div className="pb-5">
+                    <div className=" w-full m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
+                        <div className="p-4">
+                            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">Charts </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
