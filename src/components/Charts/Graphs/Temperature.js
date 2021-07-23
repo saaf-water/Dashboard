@@ -3,34 +3,90 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
 
 const Graph = (graphData) => {
-  const data = {
-    labels: ["1", "2", "3", "4", "5", "6"],
-    datasets: [
-      {
-        label: "Temperature in Celsius",
-        data: [],
-        fill: true,
-        fillOpacity: 0.5,
-        backgroundColor: "rgba(26, 201, 230, 0.4)",
-        borderColor: "rgba(23, 107, 160, 1.00)"
-      }
-    ]
-  };
 
-  const options = {
-    scales: {
-      yAxes: [
+  const data = (canvas) => {
+    const ctx = canvas.getContext("2d");
+    var bord = '#4F4F4F'
+    //1. Using gradient background. 
+    let gradient = ctx.createLinearGradient(0, 0, 0, 100);
+    gradient.addColorStop(0, 'rgba(0, 0,0, 0.25)');
+    gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.15)');
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+    return {
+      labels: listLabel,
+      datasets: [
         {
-          ticks: {
-            beginAtZero: true
-          }
+          label: 'Temperature',
+          data: listData,
+          fill: true,
+          backgroundColor: gradient,
+          pointBackgroundColor: 'white',
+          borderWidth: 2,
+          borderColor: bord,
         }
       ]
     }
   };
 
+  const options = {
+    responsive: true,
+    maintainAspectRatio: true,
+    animation: {
+      easing: 'easeInOutQuad',
+      duration: 1024
+    },
+    scales: {
+      xAxes: [{
+        ticks: {
+          display: false
+        },
+        gridLines: {
+          display: false,
+          color: 'rgba(200, 200, 200, 0.05)'
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          display: false
+        },
+        gridLines: {
+          display: false,
+          color: 'rgba(20, 20, 20, 0)'
+        }
+      }]
+    },
+    layout: {
+      padding: 5
+    },
+    elements: {
+      line: {
+        tension: 0.5
+      }
+    },
+    legend: {
+      display: false
+    },
+    point: {
+      backgroundColor: 'white'
+    },
+    tooltips: {
+      mode: 'index',
+      intersect: false
+    },
+    hover: {
+      mode: 'index',
+      intersect: false
+    }
+  };
+  var listData = [];
+  var listLabel = [];
   graphData.graphData.hist.map((item) => {
-    data.datasets[0].data.push(item.temperature);
+    listData.push(item.temperature);
+    return 0;
+  });
+  graphData.graphData.hist.map((item) => {
+    listLabel.push(item.date);
     return 0;
   });
 
@@ -41,20 +97,20 @@ const Temperature = ({ current, history }) => {
   return (
     <>
       <div className="header text-black dark:text-white">
-        <h5 className="title text-gray-400 dark:text-gray-400 font-bold">
+        <h5 className="title text-gray-500 dark:text-gray-400 font-bold">
           Temperature
         </h5>
-        <h1 className="font-extrabold text-4xl">
+        <h1 className="font-extrabold text-xl xl:text-2xl 2xl:text-3xl">
           {current.lastJsonMessage
             ? current.lastJsonMessage.temperature + "°C"
-            : "Loading..."}
+            : "- °C"}
         </h1>
         <div className="links"></div>
       </div>
       {history.lastJsonMessage ? (
         <Graph graphData={history.lastJsonMessage} />
       ) : (
-        <SkeletonTheme color="#202020" highlightColor="#444">
+        <SkeletonTheme className="py-5" color="#cfcfcf" highlightColor="#c4c4c4">
           <p>
             <Skeleton count={3} />
           </p>
