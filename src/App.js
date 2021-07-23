@@ -10,8 +10,6 @@ import Navbar from './components/Navbar'
 // import { AuthProvider } from "./components/Auth"
 // import ForgotPassword from "./components/ForgotPassword"
 
-
-
 function App() {
   return (
     //<AuthProvider>
@@ -20,8 +18,8 @@ function App() {
       <div className="font-roboto bg-gray-200 dark:bg-gray-900 h-screen overflow-hidden">
         <Navbar />
         <Switch>
-          <Route path="/" component={Dashboard} exact />
-          <Route path="/charts" component={Charts} />
+          <Route path="/" component={Dashboard} exact/>
+          <Route path="/predictions" component={Charts}/>
           <Route path="/labTest" component={Dashboard} />
           <Route path="/map" component={Map} />
         </Switch>
