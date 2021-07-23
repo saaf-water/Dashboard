@@ -1,8 +1,10 @@
-import { Fragment } from 'react'
+// import { Fragment } from 'react'
 import React from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import firebaseConfig from "../config.js";
+// import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Disclosure} from '@headlessui/react'
+// import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
+// import fi4rebaseConfig from "../config.js";
 
 var navigation = [
   { name: 'Dashboard', link: '/', current: true },

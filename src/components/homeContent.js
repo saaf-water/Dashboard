@@ -9,7 +9,6 @@ import Turbidity from "./../components/Charts/Graphs/Turbidity"
 import Table from "./Table"
 
 import Summary from "./Summary";
-import CombinedChart from "./Charts/History";
 
 
 const useThemeDetector = () => {
