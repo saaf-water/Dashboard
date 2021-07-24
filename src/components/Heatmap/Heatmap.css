@@ -1,7 +1,3 @@
-/*
- * react-calendar-heatmap styles
- */
-
 .react-calendar-heatmap text {
   font-size: 10px;
   fill: #aaa;
@@ -21,21 +17,21 @@
 }
 
 .color-beammp-0 {
-  fill: #eeeeee;
+  fill: #c91717;
 }
 
 .color-beammp-1 {
-  fill: #f3cd94;
+  fill: #f3870b;
 }
 
 .color-beammp-2 {
-  fill: #eba63f;
+  fill: #ebe708;
 }
 
 .color-beammp-3 {
-  fill: #f1a009;
+  fill: #09f109;
 }
 
 .color-beammp-4 {
-  fill: #f73e2f;
+  fill: #8fe96c;
 }

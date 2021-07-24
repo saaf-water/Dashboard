@@ -20,19 +20,36 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function Heatmap() {
+const Heatmap = ({ current }) => {
+  let calenderData = [];
+  // console.log(current.lastJsonMessage);
   const randomValues = getRange(2000).map((index) => {
     return {
       date: shiftDate(today, -index),
+      //date: current.lastJsonMessage.hist[item].date,
       count: getRandomInt(0, 4)
     };
   });
+
+  //console.log(randomValues);
+
+  if (current.lastJsonMessage) {
+    Object.keys(current.lastJsonMessage.hist).map((item) =>
+      calenderData.push({
+        date: shiftDate(today, -item),
+        count: current.lastJsonMessage.hist[item].summary
+      })
+    );
+  }
+
+   //console.log(calenderData);
+
   return (
     <div>
       <CalendarHeatmap
         startDate={shiftDate(today, -364)}
         endDate={today}
-        values={randomValues}
+        values={calenderData}
         classForValue={(value) => {
           if (!value) {
             return "color-empty";
@@ -41,18 +58,13 @@ function Heatmap() {
         }}
         tooltipDataAttrs={(value) => {
           return {
-            "data-tip": `${value.date.toISOString().slice(0, 10)} has count: ${
-              value.count
-            }`
+            "data-tip": `Water Quality: ${value.count} on ${shiftDate(today, -364)}`
           };
         }}
         showWeekdayLabels={false}
-        onClick={(value) =>
-          alert(`Clicked on value with count: ${value.count}`)
-        }
       />
       <ReactTooltip />
     </div>
   );
-}
+};
 export default Heatmap;
