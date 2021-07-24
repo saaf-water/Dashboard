@@ -23,10 +23,10 @@ function getRandomInt(min, max) {
 const Heatmap = ({ current }) => {
   let calenderData = [];
   // console.log(current.lastJsonMessage);
+  // eslint-disable-next-line
   const randomValues = getRange(2000).map((index) => {
     return {
       date: shiftDate(today, -index),
-      //date: current.lastJsonMessage.hist[item].date,
       count: getRandomInt(0, 4)
     };
   });
@@ -36,7 +36,8 @@ const Heatmap = ({ current }) => {
   if (current.lastJsonMessage) {
     Object.keys(current.lastJsonMessage.hist).map((item) =>
       calenderData.push({
-        date: shiftDate(today, -item),
+        date: shiftDate(today, -item),                     //Dummy Date
+        //date: current.lastJsonMessage.hist[item].date,   //Websocket date
         count: current.lastJsonMessage.hist[item].summary
       })
     );
@@ -58,7 +59,7 @@ const Heatmap = ({ current }) => {
         }}
         tooltipDataAttrs={(value) => {
           return {
-            "data-tip": `Water Quality: ${value.count} on ${shiftDate(today, -364)}`
+            "data-tip": `Water Quality: ${value.count} on ${value.date}`               
           };
         }}
         showWeekdayLabels={false}
