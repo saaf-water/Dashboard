@@ -8,30 +8,16 @@ const Graph = (graphData) => {
     const ctx = canvas.getContext("2d");
     var bord = '#4F4F4F'
     //1. Using gradient background. 
-    let gradient = ctx.createLinearGradient(0, 0, 0, 90);
-    if (listData[listData.length - 1] >= 0 && listData[listData.length - 1] <= 2) {
-      gradient.addColorStop(0, 'rgba(0, 199,79, 0.33)');
-      gradient.addColorStop(0.5, 'rgba(147, 255, 0, 0.2)');
-      gradient.addColorStop(1, 'rgba(147, 255, 0, 0)');
-      bord = '#00C74F';
-    }
-    else if (listData[listData.length - 1] > 2 && listData[listData.length - 1] <= 5) {
-      gradient.addColorStop(0, 'rgba(247, 255, 32, 0.17)');
-      gradient.addColorStop(0.5, 'rgba(247, 161, 32, 0.11)');
-      gradient.addColorStop(1, 'rgba(243, 142, 22, 0)');
-      bord = '#E0CA00';
-    }
-    else if (listData[listData.length - 1] > 5) {
-      gradient.addColorStop(0, 'rgba(255, 0, 0, 0.35)');
-      gradient.addColorStop(0.5, 'rgba(245, 19, 100, 0.22)');
-      gradient.addColorStop(1, 'rgba(243, 22, 115, 0)');
-      bord = '#FF0000';
-    }
+    let gradient = ctx.createLinearGradient(0, 0, 0, 130);
+    gradient.addColorStop(0, 'rgba(0, 0,0, 0.25)');
+    gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.15)');
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
     return {
       labels: listLabel,
       datasets: [
         {
-          label: 'Turbidity',
+          label: 'Temperature',
           data: listData,
           fill: true,
           backgroundColor: gradient,
@@ -86,8 +72,7 @@ const Graph = (graphData) => {
     },
     tooltips: {
       mode: 'index',
-      intersect: false,
-
+      intersect: false
     },
     hover: {
       mode: 'index',
@@ -97,28 +82,28 @@ const Graph = (graphData) => {
   var listData = [];
   var listLabel = [];
   graphData.graphData.hist.map((item) => {
-    listData.push(item.turbidity);
+    listData.push(item.temperature);
     return 0;
   });
   graphData.graphData.hist.map((item) => {
-    listLabel.push(item.date);
+    listLabel.push(item.date +" "+ item.time);
     return 0;
   });
 
   return <Line data={data} options={options} />;
 };
 
-const Turbidity = ({ current, history }) => {
+const Temperature = ({ current, history }) => {
   return (
     <>
       <div className="header text-black dark:text-white">
         <h5 className="title text-gray-500 dark:text-gray-400 font-bold">
-          Turbidity
+          Temperature
         </h5>
         <h1 className="font-extrabold text-xl xl:text-2xl 2xl:text-3xl">
           {current.lastJsonMessage
-            ? current.lastJsonMessage.turbidity + " NTU"
-            : "- NTU"}
+            ? current.lastJsonMessage.temperature + "°C"
+            : "- °C"}
         </h1>
         <div className="links"></div>
       </div>
@@ -134,4 +119,4 @@ const Turbidity = ({ current, history }) => {
     </>
   );
 };
-export default Turbidity;
+export default Temperature;

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 
-import TDS from "./../components/Charts/Graphs/TDS"
-import ElectricalConductivity from "./../components/Charts/Graphs/electricalConductivity"
-import PH from "./../components/Charts/Graphs/pH"
-import Temperature from "./../components/Charts/Graphs/Temperature"
-import Turbidity from "./../components/Charts/Graphs/Turbidity"
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import TDS from "./Graphs/TDS"
+import ElectricalConductivity from "./Graphs/electricalConductivity"
+import PH from "./Graphs/pH"
+import Temperature from "./Graphs/Temperature"
+import Turbidity from "./Graphs/Turbidity"
 import Table from "./Table"
 
 import Summary from "./Summary";
@@ -78,13 +79,20 @@ export default function HomeContent() {
 
         <>
             <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
-                <div className="flex flex-wrap -m-4 order-last lg:order-first">
+                <p className="font-light text-sm">Last Updated: {current.lastJsonMessage
+                    ? current.lastJsonMessage.date + ", " + current.lastJsonMessage.time : (
+                        <SkeletonTheme className="py-1" color="#cfcfcf" highlightColor="#c4c4c4">
+                            <p>
+                                <Skeleton count={1} />
+                            </p>
+                        </SkeletonTheme>)}</p>
+                <div className="flex flex-wrap -m-4 ">
                     <div className="p-4 w-full lg:w-2/4 xl:w-3/5">
                         <div className="flex flex-row">
                             <div className="flex-auto justify-center items-center  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 h-96 overflow-auto no-scrollbar">
                                 <div className="flex items-start justify-center h-full">
                                     <iframe
-                                        className={classNames(useThemeDetector() ? 'hidden' : 'block', 'border-gray-300 rounded-xl')}
+                                        className={classNames(useThemeDetector() ? 'block' : 'block', 'border-gray-300 rounded-xl')}
                                         width="100%"
                                         height="100%"
                                         frameborder="0"
@@ -95,7 +103,7 @@ export default function HomeContent() {
                                         src="//www.arcgis.com/apps/Embed/index.html?webmap=fbadf2d08dd141aa8fbfe60a227e189b&extent=73.5435,15.0755,74.5577,15.6462&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light">
                                     </iframe>
 
-                                    <iframe
+                                    {/* <iframe
                                         className={classNames(useThemeDetector() ? 'block' : 'hidden', 'border-gray-700 rounded-xl')}
                                         width="100%"
                                         height="100%"
@@ -105,7 +113,7 @@ export default function HomeContent() {
                                         marginwidth="0"
                                         title="Saaf-Water-Dark"
                                         src="//www.arcgis.com/apps/Embed/index.html?webmap=3c0c2dc817994509b9d529f7000b3a85&extent=50.3459,3.4536,115.2531,38.1566&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=dark">
-                                    </iframe>
+                                    </iframe> */}
                                 </div>
                             </div>
                         </div>
@@ -133,29 +141,23 @@ export default function HomeContent() {
                         </div>
                     </div>
                 </div>
+
                 <div className="pb-5">
-                    <div className=" w-full lg:w-2/3 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                        <div className="p-4">
-                            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">History </div>
-                            <Table historyMax={historyMax} />
+                    <div className="flex flex-wrap justify-center -m-4 ">
+                        <div className=" w-full xl:w-2/3 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
+                            <div className="p-4">
+                                <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">History </div>
+                                <Table historyMax={historyMax} />
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div className="pb-5">
-                    <div className=" w-full lg:w-2/3 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                        <div className="p-4">
-                            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">HeatMap </div>
-                            <Heatmap current={history} />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="pb-5">
-                    <div className=" w-full m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                        <div className="p-4">
-                            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">Charts </div>
-
+                        <div className=" w-full xl:w-1/4 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
+                            <div className="p-4">
+                                <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">Water Quality History </div>
+                                <div className="flex justify-center">
+                                <Heatmap current={historyMax} />
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>

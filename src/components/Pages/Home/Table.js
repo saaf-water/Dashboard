@@ -47,7 +47,8 @@ const Table = ({ historyMax }) => {
             <MaterialTable
                 icons={tableIcons}
                 columns={[
-                    { title: 'Timestamp', field: 'date' },
+                    { title: 'Date', field: 'date' },
+                    { title: 'Time', field: 'time' },
                     { title: 'TDS', field: 'tds' },
                     { title: 'Turbidity', field: 'turbidity'},
                     { title: 'pH', field: 'ph'},
