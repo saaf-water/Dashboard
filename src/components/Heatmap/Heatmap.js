@@ -30,7 +30,6 @@ const Heatmap = ({ current }) => {
       count: getRandomInt(0, 4)
     };
   });
-
   //console.log(randomValues);
 
   if (current.lastJsonMessage) {
@@ -47,9 +46,11 @@ const Heatmap = ({ current }) => {
 
   return (
     <div>
+      <div style={{ width: "125px" }}>
       <CalendarHeatmap
         startDate={shiftDate(today, -364)}
         endDate={today}
+        horizontal={false}
         values={calenderData}
         classForValue={(value) => {
           if (!value) {
@@ -64,6 +65,8 @@ const Heatmap = ({ current }) => {
         }}
         showWeekdayLabels={false}
       />
+      </div>
+
       <ReactTooltip />
     </div>
   );
