@@ -8,7 +8,7 @@ const Graph = (graphData) => {
     const ctx = canvas.getContext("2d");
     var bord = '#4F4F4F'
     //1. Using gradient background. 
-    let gradient = ctx.createLinearGradient(0, 0, 0, 100);
+    let gradient = ctx.createLinearGradient(0, 0, 0, 130);
     if (listData[listData.length - 1] >= 6.5 && listData[listData.length - 1] <= 8.5) {
       gradient.addColorStop(0, 'rgba(0, 199,79, 0.33)');
       gradient.addColorStop(0.5, 'rgba(147, 255, 0, 0.2)');
@@ -94,7 +94,7 @@ const Graph = (graphData) => {
     return 0;
   });
   graphData.graphData.hist.map((item) => {
-    listLabel.push(item.date);
+    listLabel.push(item.date +" "+ item.time);
     return 0;
   });
 

@@ -33,11 +33,11 @@ const Heatmap = ({ current }) => {
   //console.log(randomValues);
 
   if (current.lastJsonMessage) {
-    Object.keys(current.lastJsonMessage.hist).map((item) =>
+    Object.keys(current.lastJsonMessage.histMax).map((item) =>
       calenderData.push({
         date: shiftDate(today, -item),                     //Dummy Date
         //date: current.lastJsonMessage.hist[item].date,   //Websocket date
-        count: current.lastJsonMessage.hist[item].summary
+        count: current.lastJsonMessage.histMax[item].summary
       })
     );
   }
@@ -46,11 +46,11 @@ const Heatmap = ({ current }) => {
 
   return (
     <div>
-      <div style={{ width: "125px" }}>
+      <div style={{ width: "300px" }}>
       <CalendarHeatmap
-        startDate={shiftDate(today, -364)}
+        startDate={shiftDate(today, -132)}
         endDate={today}
-        horizontal={false}
+        // horizontal={false}
         values={calenderData}
         classForValue={(value) => {
           if (!value) {

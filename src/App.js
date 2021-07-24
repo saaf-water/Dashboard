@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Charts from "./components/Charts/Charts"
-import Dashboard from './components/Dashboard'
-import Map from './components/Map'
+import Charts from "./components/Pages/Charts/Charts"
+import Dashboard from './components/Pages/Home/Dashboard'
+import Map from './components/Pages/Map/Map'
 import Navbar from './components/Navbar'
 
 // import LogIn from "./components/Login"
@@ -19,7 +19,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" component={Dashboard} exact/>
-          <Route path="/predictions" component={Charts}/>
+          <Route path="/Predictions" component={Dashboard}/>
+          <Route path="/Charts" component={Charts}/>
           <Route path="/labTest" component={Dashboard} />
           <Route path="/map" component={Map} />
         </Switch>

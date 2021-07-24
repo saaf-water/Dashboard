@@ -8,9 +8,10 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 var navigation = [
   { name: 'Dashboard', link: '/', current: true },
+  { name: 'Charts', link: '/charts', current: false },
   { name: 'Predictions', link: '/predictions', current: false },
   { name: 'Lab Tests', link: '/labTest',current: false },
-  { name: 'Map', link: '/map',current: false },
+  // { name: 'Map', link: '/map',current: false },
 ]
 
 function classNames(...classes) {

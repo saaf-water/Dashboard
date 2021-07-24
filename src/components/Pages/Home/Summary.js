@@ -2,7 +2,7 @@ import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const waterSummary = [
-    { type: 'Worse', boilParam: 'Unfit for cosumption', altUse: 'Water suitable for external use only!' },
+    { type: 'Worse', boilParam: 'Unfit for consumption', altUse: 'Water suitable for external use only!' },
     { type: 'Bad', boilParam: 'RO filteration and good boiling / UV filteration required before cosumption', altUse: 'Water suitable for direct domestic usage' },
     { type: 'Good', boilParam: 'Sedementary filteration followed by good boiling required before cosumption', altUse: 'Water suitable for direct domestic usage' },
     { type: 'Very Good', boilParam: 'Boiling required before cosumption', altUse: 'Water suitable for direct domestic usage' },
