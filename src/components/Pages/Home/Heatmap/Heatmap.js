@@ -22,21 +22,15 @@ function getRandomInt(min, max) {
 
 const Heatmap = ({ current }) => {
   const [heatMapSize, setHeatMapSize] = useState();
-  const [widthMin, setWidthMin] = useState();
-  const [WidthMax, setWidthMax] = useState();
 
   function resizeMap() {
-    if (window.innerWidth >= 1278) {
+    console.log(Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 1279) {
       setHeatMapSize(-132);
-      setWidthMin("150px");
-      setWidthMax("350px");
-    } else if (window.innerWidth <= 1278 && window.innerWidth >= 663) {
+    } else if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 1278 && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 808) {
       setHeatMapSize(-364);
-      setWidthMin("250px");
     } else {
       setHeatMapSize(-132);
-      setWidthMin("30px");
-      setWidthMax("110px");
     }
   }
 
@@ -70,11 +64,11 @@ const Heatmap = ({ current }) => {
   }, []);
 
   //console.log(calenderData);
-  console.log(window.innerWidth);
+  //console.log(window.innerWidth);
 
   return (
     <div>
-      <div style={{ minWidth: { widthMin }, maxWidth: { WidthMax } }}>
+      <div>
         <CalendarHeatmap
           startDate={shiftDate(today, heatMapSize)}
           endDate={today}

@@ -31,3 +31,34 @@
 .color-beammp-4 {
   fill: #8fe96c;
 }
+@media only screen and (min-width: 1278px) {
+  svg.react-calendar-heatmap {
+    min-height: 150px;
+    min-width: 250px;
+    max-width: 280px;
+  }
+}
+
+@media only screen and (max-width: 1278px) {
+  svg.react-calendar-heatmap {
+    min-height: 150px;
+    min-width: 500px;
+    max-width: 700px;
+  }
+}
+
+@media only screen and (max-width: 807px) {
+  svg.react-calendar-heatmap {
+    min-height: 150px;
+    min-width: 330px;
+    max-width: 280px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  svg.react-calendar-heatmap {
+    min-height: 150px;
+    min-width: 220px;
+    max-width: 250px;
+  }
+}
