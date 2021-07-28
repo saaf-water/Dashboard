@@ -12,6 +12,8 @@ import Table from "./Table"
 import Summary from "./Summary";
 import Heatmap from "./Heatmap/Heatmap";
 
+require('dotenv').config()
+
 
 const useThemeDetector = () => {
     const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -35,14 +37,14 @@ function classNames(...classes) {
 export default function HomeContent() {
 
     const [socketUrl] = useState(
-        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/history"
+        process.env.React_App_HISTORY_WEBSOCKET
     );
 
     const [socketCurrentUrl] = useState(
-        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716"
+        process.env.React_App_PUMP_WEBSOCKET
     );
     const [socketUrlMax] = useState(
-        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/historyMax"
+        process.env.React_App_HISTORYMAX_WEBSOCKET
     );
 
     const historyMax = useWebSocket(socketUrlMax);

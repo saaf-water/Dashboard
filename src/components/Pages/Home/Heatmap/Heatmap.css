@@ -9,7 +9,7 @@
 
 .react-calendar-heatmap rect:hover {
   stroke: #555;
-  stroke-width: 1px;
+  stroke-width: 2px;
 }
 
 .color-beammp-0 {
@@ -30,6 +30,10 @@
 
 .color-beammp-4 {
   fill: #8fe96c;
+}
+
+.color-empty {
+  fill: #848882;
 }
 @media only screen and (min-width: 1278px) {
   svg.react-calendar-heatmap {
