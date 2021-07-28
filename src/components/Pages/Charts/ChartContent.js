@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+
 import ElectricalConductivityFull from "./Graphs/electricalConductivity";
 import PHFull from "./Graphs/pH";
 import TDSFull from "./Graphs/TDS";
 import TemperatureFull from "./Graphs/Temperature";
 import TurbidityFull from "./Graphs/Turbidity";
 
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+require('dotenv').config()
 
 
 export default function ChartContent() {
     const [socketUrl] = useState(
-        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716/history"
+        process.env.React_App_HISTORY_WEBSOCKET
     );
 
     const [socketCurrentUrl] = useState(
-        "wss://node-red-saaf-water.eu-gb.mybluemix.net/ws/ID20210716"
+        process.env.React_App_PUMP_WEBSOCKET
     );
 
     const history = useWebSocket(socketUrl);
