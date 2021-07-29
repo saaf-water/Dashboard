@@ -24,7 +24,7 @@ export default function ChartContent() {
     const current = useWebSocket(socketCurrentUrl);
 
     useEffect(() => {
-        console.log("Sending Message on Component Mount");
+        //console.log("Sending Message on Component Mount");
         current.sendMessage("Get Data");
         setTimeout(() => {
             history.sendMessage("Get Data");
@@ -32,7 +32,7 @@ export default function ChartContent() {
 
         //Every 30 Mins
         setInterval(() => {
-            console.log("Sending Message");
+            //console.log("Sending Message");
             current.sendMessage("Get Data");
             setTimeout(() => {
                 history.sendMessage("Get Data");
