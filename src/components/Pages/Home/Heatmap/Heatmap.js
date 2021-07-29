@@ -24,7 +24,7 @@ const Heatmap = ({ current }) => {
   const [heatMapSize, setHeatMapSize] = useState();
 
   function resizeMap() {
-    console.log(Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
+    //console.log(Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 1279) {
       setHeatMapSize(-132);
     } else if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 1278 && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 808) {
