@@ -36,6 +36,12 @@ The project reviewers at this time are :
 - [Hrishikesh24](https://github.com/Hrishikesh24)
 - [ManikantaChavvakula7](https://github.com/ManikantaChavvakula7)
 - [jehhhh](https://github.com/jehhhh) 
+- 
+
+## License
+
+Saaf water is licensed under the Apache Software License, Version 2.
+Contributions are subject to the [Apache Software License, Version 2 (http://www.apache.org/licenses/LICENSE-2.0.txt).
 
 
 ### Authors 
