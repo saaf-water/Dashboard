@@ -37,6 +37,22 @@ The project reviewers at this time are :
 - [ManikantaChavvakula7](https://github.com/ManikantaChavvakula7)
 - [jehhhh](https://github.com/jehhhh) 
 
+### Authors
+
+- Hrishikesh Mahesh Bhandari
+- Jay Aherkar
+- Manikanta Chavvakula
+- Sanket Marathe
+- Satyam Prakash
+
+### Acknowledgements
+
+We would like to acknowledge Mr. Chintamani Shirodkar in providing ongoing support to our team.
+
+Thanks to Mr. Gupta from Goa, India for your support.
+
+
+
 ## License
 
 Saaf water is licensed under the Apache Software License, Version 2.
