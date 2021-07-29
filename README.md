@@ -36,3 +36,20 @@ The project reviewers at this time are :
 - [Hrishikesh24](https://github.com/Hrishikesh24)
 - [ManikantaChavvakula7](https://github.com/ManikantaChavvakula7)
 - [jehhhh](https://github.com/jehhhh) 
+
+
+### Authors 
+
+- Hrishikesh Mahesh Bhandari
+- Jay Aherkar
+- Manikanta Chavvakula
+- Sanket Marathe
+- Satyam Prakash
+
+### Acknowledgements 
+
+
+- We would like to acknowledge Mr. Chintamani Shirodkar in providing ongoing support to our team.
+
+- Thanks to Mr. Gupta from Goa for your support.
+
