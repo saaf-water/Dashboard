@@ -19,10 +19,10 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" component={Dashboard} exact/>
-          <Route path="/Predictions" component={Dashboard}/>
+         // <Route path="/Predictions" component={Dashboard}/>
           <Route path="/Charts" component={Charts}/>
-          <Route path="/labTest" component={Dashboard} />
-          <Route path="/map" component={Map} />
+        //  <Route path="/labTest" component={Dashboard} />
+        //  <Route path="/map" component={Map} />
         </Switch>
       </div>
     </BrowserRouter>
