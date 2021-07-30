@@ -49,7 +49,7 @@ The project reviewers at this time are :
 
 We would like to acknowledge Mr. Chintamani Shirodkar in providing ongoing support to our team.
 
-Thanks to Mr. Gupta from Goa, India for your support.
+
 
 
 
