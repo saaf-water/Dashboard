@@ -6,6 +6,8 @@ import { Disclosure} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 // import fi4rebaseConfig from "../config.js";
 
+/*Builds the navigation menu of each web page and diverts clicks to their respective webpages*/
+
 var navigation = [
   { name: 'Dashboard', link: '/', current: true },
   { name: 'Charts', link: '/charts', current: false },

@@ -1,3 +1,5 @@
+/*homeContent.js integrates all the different components of home page into one.*/
+
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 
@@ -13,7 +15,6 @@ import Summary from "./Summary";
 import Heatmap from "./Heatmap/Heatmap";
 
 require('dotenv').config()
-
 
 const useThemeDetector = () => {
     const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;

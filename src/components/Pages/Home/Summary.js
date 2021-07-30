@@ -1,5 +1,6 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+/*Summary.js contains code for displaying water quality summary to users*/
 
 const waterSummary = [
     { type: 'Worse', boilParam: 'Unfit for consumption', altUse: 'Water suitable for external use only!' },

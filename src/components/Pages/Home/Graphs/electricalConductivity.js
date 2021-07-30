@@ -1,3 +1,4 @@
+/*electricalConductivity.js contains the code for EC component, it shows the electrical conductivity of Water.*/
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";

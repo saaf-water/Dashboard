@@ -9,7 +9,7 @@ import HomeContent from './homeContent'
   if (!currentUser) {
     return <Redirect to = "/login"/>;
   }*/
-
+/*Dashboard.js displays homeContent.js page*/
 export default function Dashboard() {
   return (
     <div className="font-roboto">

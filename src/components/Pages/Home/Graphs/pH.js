@@ -1,3 +1,4 @@
+/*pH.js contains the code for the PH component, it shows the pH of water.*/
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
