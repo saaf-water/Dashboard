@@ -5,6 +5,8 @@ import Dashboard from './components/Pages/Home/Dashboard'
 import Map from './components/Pages/Map/Map'
 import Navbar from './components/Navbar'
 
+/* The App.js file takes care of the routing of the webapp*/
+
 // import LogIn from "./components/Login"
 // import SignUp from "./components/SignUp"
 // import { AuthProvider } from "./components/Auth"

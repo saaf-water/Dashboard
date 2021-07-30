@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+/* Map.js contains code which shows the map page*/
 const useThemeDetector = () => {
   const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDarkTheme, setIsDarkTheme] = useState(getCurrentTheme());

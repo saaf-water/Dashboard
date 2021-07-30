@@ -1,3 +1,4 @@
+/*Heatmap.js contains code for Heatmap component on homepage*/
 import React, { useEffect, useState } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import ReactTooltip from "react-tooltip";
