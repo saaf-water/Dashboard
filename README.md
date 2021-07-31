@@ -9,7 +9,7 @@
 
 ## Getting Started with Saaf water Dashboard (React App)
 
-Saaf water Dashboard (React App) is the front-end for the entire Saaf water platform. Built with -
+Saaf water Dashboard (React App) is the front-end for the entire Saaf water platform. Built with:
 
 - ReactJS
 - ChartJS
