@@ -10,11 +10,11 @@
 
 Saaf water Dashboard (React App) is the front-end for the entire Saaf water platform. Built with:
 
-- ReactJS
-- ChartJS
-- Esri ArcGis Map
-- Tailwind CSS
-- Node.Js
+- [ReactJS](https://reactjs.org/)
+- [ChartJS](https://www.chartjs.org/)
+- [Esri ArcGis Map](https://www.esri.com/en-us/arcgis/about-arcgis/overview)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Node.Js](https://nodejs.org/en/)
 
 Instructions to run the Saaf water Dashboard (React App);
 1. [Local Development](#run-the-saaf-water-dashboard-for-local-development)
