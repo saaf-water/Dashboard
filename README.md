@@ -1,7 +1,5 @@
 # Saaf water Dashboard
 
-## Contribution Guide
-
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Website](https://img.shields.io/badge/View-Website-blue)](https://saaf-water.eu-gb.mybluemix.net/)
 
