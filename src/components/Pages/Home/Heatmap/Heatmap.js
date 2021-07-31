@@ -50,8 +50,8 @@ const Heatmap = ({ current }) => {
   if (current.lastJsonMessage) {
     Object.keys(current.lastJsonMessage.histMax).map((item) =>
       calenderData.push({
-        date: shiftDate(today, -item), //Dummy Date
-        //date: current.lastJsonMessage.hist[item].date,   //Websocket date
+        //date: shiftDate(today, -item), //Dummy Date
+        date: current.lastJsonMessage.histMax[item].date,   //Websocket date
         count: current.lastJsonMessage.histMax[item].summary
       })
     );
