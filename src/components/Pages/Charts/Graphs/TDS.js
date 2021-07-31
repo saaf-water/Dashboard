@@ -1,6 +1,7 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
+/*TDS.js contains the code for TDS component, it shows the TDS level of water.*/
 
 const Graph = (graphData) => {
 

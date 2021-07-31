@@ -9,7 +9,7 @@ import TemperatureFull from "./Graphs/Temperature";
 import TurbidityFull from "./Graphs/Turbidity";
 
 require('dotenv').config()
-
+/* ChartContent.js communicates through websockets and sends props to other graph components*/
 
 export default function ChartContent() {
     const [socketUrl] = useState(
