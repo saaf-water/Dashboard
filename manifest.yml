@@ -4,5 +4,4 @@ memory: 256M
 path: build/
 buildpack: staticfile_buildpack 
 routes:
-  - route: saaf-water.eu-gb.mybluemix.net
-  - route: saaf-water.eu-gb.mybluemix.net/charts
+  - route: <Input your ROUTE>
