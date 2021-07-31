@@ -3,6 +3,9 @@ import { Redirect } from "react-router-dom"
 import firebaseConfig from "../../config"
 import coverimg from "./Asset/poster.webp"
 
+/*SignUp.js builds the signup page of the SaafWater webapp, it also includes code for signing up as an admin */
+
+/*Signup code*/
 const SignUp = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const handleSubmit = (e) => {
@@ -22,6 +25,8 @@ const SignUp = () => {
   if (currentUser) {
     return <Redirect to="/login" />;
   }
+
+  /*Page setup*/
   return (
     <div class="font-roboto relative flex items-center justify-center h-screen mb-12 overflow-hidden p-2 ">
       <div class="relative z-40 backdrop-filter backdrop-blur-sm p-5 bg-gray-200 dark:bg-gray-900 bg-opacity-60 shadow-lg rounded-xl">

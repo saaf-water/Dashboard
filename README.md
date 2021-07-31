@@ -65,7 +65,15 @@ Thank you for your interest in contributing to saaf-water! Before you begin writ
 Once you implement and test your feature or bug-fix, please submit a Pull Request to [https://github.com/saaf-water/Dashboard](https://github.com/saaf-water/Dashboard).
 
 The project reviewers at this time are :
+
 - [Sanket Marathe](https://github.com/msanket9) (Maintainer)
 - [Hrishikesh Bhandari](https://github.com/Hrishikesh24)
 - [Manikanta Chavvakula](https://github.com/ManikantaChavvakula7)
 - [Jay Aherkar](https://github.com/jehhhh) 
+
+
+## License
+
+Saaf water Dashboard is licensed under the Apache Software License, Version 2.
+Contributions are subject to the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+

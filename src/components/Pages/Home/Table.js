@@ -40,6 +40,7 @@ const tableIcons = {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
+/*Table.js constructs the History table on home page*/
 const Table = ({ historyMax }) => {
     return (
         <>

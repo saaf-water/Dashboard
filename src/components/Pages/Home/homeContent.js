@@ -1,3 +1,5 @@
+/*homeContent.js integrates all the different components of home page into one.*/
+
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 
@@ -13,7 +15,6 @@ import Summary from "./Summary";
 import Heatmap from "./Heatmap/Heatmap";
 
 require('dotenv').config()
-
 
 const useThemeDetector = () => {
     const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -52,7 +53,7 @@ export default function HomeContent() {
     const current = useWebSocket(socketCurrentUrl);
 
     useEffect(() => {
-        console.log("Sending Message on Component Mount");
+        //console.log("Sending Message on Component Mount");
         current.sendMessage("Get Data");
         setTimeout(() => {
             history.sendMessage("Get Data");
@@ -63,7 +64,7 @@ export default function HomeContent() {
 
         //Every 30 Mins
         setInterval(() => {
-            console.log("Sending Message");
+            //console.log("Sending Message");
             current.sendMessage("Get Data");
             setTimeout(() => {
                 history.sendMessage("Get Data");

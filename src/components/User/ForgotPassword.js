@@ -1,7 +1,9 @@
 import React from 'react'
 import firebaseConfig from "../../config.js";
 
+/*ForgotPassword.js builds the forgot password page to reset forgotten passwords*/
 
+/*Password recovery code*/
 function ForgotPassword() {
   const forgotSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +15,7 @@ function ForgotPassword() {
     }
   };
 
+  /*Forgot Password page setup code*/
   return (
     <div className="font-roboto min-h-screen bg-gray-100 dark:bg-gray-800 flex flex-row items-center justify-center py-2 pl-2 pr-1 sm:px-6 lg:px-8" >
       <div className="max-w-md w-full space-y-8 p-5">
