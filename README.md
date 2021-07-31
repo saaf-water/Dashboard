@@ -1,22 +1,55 @@
-# saaf-water Dashboard
-
-saaf-water is a network of active devices installed at various water sources, it shows the latest metrics of water quality like TDS, turbidity, pH, Electrical conductivity, temperature, pathogen presence and a simple to understand Water quality summary and map which shows the water status, recommend use, and suggestions before usage. We believe that an open-source, free to use, community monitored data on climate can help tackle it.
-
-saaf-water Dashboard can be used by local authorities to monitor various aspects of data about water quality and they can also check predicted data powered by Machine Learning.
-
-We're also using this 'saaf-water Dashboard' to notify water-quality and how to improve / take precautions the end user via website, SMS, Whatsapp.
+# Saaf water Dashboard
 
 ## Contribution Guide
-### How to Build - 
 
-```
-git clone https://github.com/saaf-water/Dashboard.git
-npm install
-npm start
-```
+[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Website](https://img.shields.io/badge/View-Website-blue)](https://saaf-water.eu-gb.mybluemix.net/)
 
-`npm start` runs the app in the development mode.  
-Open [http://localhost:3000](http://localhost:3000/) to view it in the browser.
+![Dashboard](./docs/images/Dashboard.png)
+
+## Getting Started with Saaf water Dashboard (React App)
+
+Saaf water Dashboard (React App) is the front-end for the entire Saaf water platform. Built with -
+
+- ReactJS
+- ChartJS
+- Esri ArcGis Map
+- Tailwind CSS
+- Node.Js
+
+Instructions to run the Saaf water Dashboard (React App);
+1. [Local Development](#run-the-saaf-water-dashboard-for-local-development)
+2. [IBM Cloud](#run-the-saaf-water-dashboard-on-ibm-cloud-for-free)
+
+### Run the Saaf water Dashboard for local development
+#### Pre-requisites
+1. [Install Node and NPM](https://nodejs.org/en/download/)
+
+#### Install npm packages
+- Start a terminal/CMD in `~/Dashboard/` directory.
+- Execute command `npm install`.
+
+#### Run the App
+- Execute command `npm start`.
+- Open a web browser and enter `http://localhost:3000`.
+
+### Run the Saaf water Dashboard on IBM Cloud for Free
+#### Pre-requisites
+1. IBM Cloud Account:
+    - [Create free IBM Cloud account with $200 USD in credits](https://developer.ibm.com/callforcode/get-started/)
+2. [Install Node and NPM](https://nodejs.org/en/download/)
+
+#### Build the App for production
+- Start a terminal/CMD in `~/Dashboard/` directory.
+- Execute command `npm install` and `npm run build`.
+
+A production ready app's build folder with all dependencies will be created in the `~/Dashboard/build` directory.
+
+#### Deploy the App on IBM Cloud
+
+The App can deployed on IBM Cloud for free with following two free services;
+1. [IBM Cloud Foundry](./docs/IBM_CLOUD_FOUNDRY_DEPLOYMENT.md)
+
 
 ### How to Contribute
 
@@ -32,7 +65,7 @@ Thank you for your interest in contributing to saaf-water! Before you begin writ
 Once you implement and test your feature or bug-fix, please submit a Pull Request to [https://github.com/saaf-water/Dashboard](https://github.com/saaf-water/Dashboard).
 
 The project reviewers at this time are :
-- [msanket9](https://github.com/msanket9)
-- [Hrishikesh24](https://github.com/Hrishikesh24)
-- [ManikantaChavvakula7](https://github.com/ManikantaChavvakula7)
-- [jehhhh](https://github.com/jehhhh) 
+- [Sanket Marathe](https://github.com/msanket9) (Maintainer)
+- [Hrishikesh Bhandari](https://github.com/Hrishikesh24)
+- [Manikanta Chavvakula](https://github.com/ManikantaChavvakula7)
+- [Jay Aherkar](https://github.com/jehhhh) 

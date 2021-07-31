@@ -65,30 +65,26 @@ const Heatmap = ({ current }) => {
 
   //console.log(calenderData);
   //console.log(window.innerWidth);
-
-  return (
+  
+   return (
     <div>
-      <div>
-        <CalendarHeatmap
-          startDate={shiftDate(today, heatMapSize)}
-          endDate={today}
-          // horizontal={false}
-          values={calenderData}
-          classForValue={(value) => {
-            if (!value) {
-              return "color-empty";
-            }
-            return `color-beammp-${value.count}`;
-          }}
-          tooltipDataAttrs={(value) => {
-            return {
-              "data-tip": `Water Quality: ${value.count} on ${value.date}`
-            };
-          }}
-          showWeekdayLabels={false}
-        />
-      </div>
-
+      <CalendarHeatmap
+        startDate={shiftDate(today, heatMapSize)}
+        endDate={today}
+        values={calenderData}
+        classForValue={(value) => {
+          if (!value) {
+            return "color-empty";
+          }
+          return `color-beammp-${value.count}`;
+        }}
+        tooltipDataAttrs={(value) => {
+          return {
+            "data-tip": `Water Quality: ${value.count} on ${value.date}`               
+          };
+        }}
+        showWeekdayLabels={false}
+      />
       <ReactTooltip />
     </div>
   );
