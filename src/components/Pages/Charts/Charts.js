@@ -1,6 +1,6 @@
 import React from 'react'
 import ChartContent from './ChartContent';
-
+/*Chart.js shows the ChartContent.js*/
 export default function Dashboard() {
   return (
     <div className="font-roboto">

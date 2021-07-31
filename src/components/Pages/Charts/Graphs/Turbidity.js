@@ -1,3 +1,4 @@
+/*Turbidity.js includes code for the Turbidity component*/
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
