@@ -13,7 +13,6 @@ import Table from "./Table"
 
 import Summary from "./Summary";
 import Heatmap from "./Heatmap/Heatmap";
-import Dropdown from "../../../components/Dropdown";
 
 require('dotenv').config()
 
@@ -89,9 +88,7 @@ export default function HomeContent() {
                             <p>
                                 <Skeleton count={1} />
                             </p>
-                        </SkeletonTheme>)} </p>        
-
-                <Dropdown/>
+                        </SkeletonTheme>)}</p>
                 <div className="flex flex-wrap -m-4 ">
                     <div className="p-4 w-full lg:w-2/4 xl:w-3/5">
                         <div className="flex flex-row">
