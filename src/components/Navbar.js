@@ -45,13 +45,13 @@ export default function Navbar() {
                 <div className="flex-shrink-0 flex items-center">
                   <a
                     href="/"
-                    className="text-2xl font-thin text-gray-600 dark:text-gray-300 lg:hidden h-8 w-auto"
+                    className="text-2xl font-thin text-black dark:text-gray-300 lg:hidden h-8 w-auto"
                     alt="Saaf water">
                     <span class="text-2xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
                   </a>
                   <a
                     href="/"
-                    className="text-3xl font-thin text-gray-600 dark:text-gray-300 hidden lg:block h-8 w-auto"
+                    className="text-3xl font-thin text-black dark:text-gray-300 hidden lg:block h-8 w-auto"
                     alt="Saaf water">
                     <span class="text-3xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
                   </a>
