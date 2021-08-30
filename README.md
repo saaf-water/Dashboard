@@ -1,21 +1,20 @@
 # Saaf water Dashboard
 
-## Contribution Guide
-
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Community](https://img.shields.io/badge/Join-Community-blue)](https://discord.gg/9VVKhs6fSu) 
 [![Website](https://img.shields.io/badge/View-Website-blue)](https://saaf-water.eu-gb.mybluemix.net/)
 
 ![Dashboard](./docs/images/Dashboard.png)
 
 ## Getting Started with Saaf water Dashboard (React App)
 
-Saaf water Dashboard (React App) is the front-end for the entire Saaf water platform. Built with -
+Saaf water Dashboard (React App) is the front-end for the entire Saaf water platform. Built with:
 
-- ReactJS
-- ChartJS
-- Esri ArcGis Map
-- Tailwind CSS
-- Node.Js
+- [ReactJS](https://reactjs.org/)
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
+- [Esri ArcGis Map](https://www.esri.com/en-us/arcgis/about-arcgis/overview)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Node.Js](https://nodejs.org/en/)
 
 Instructions to run the Saaf water Dashboard (React App);
 1. [Local Development](#run-the-saaf-water-dashboard-for-local-development)
