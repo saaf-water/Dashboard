@@ -7,6 +7,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 // import fi4rebaseConfig from "../config.js";
 
 import Dropdown from './Dropdown';
+import SelectLanguage from "./SelectLanguage";
 
 /*Builds the navigation menu of each web page and diverts clicks to their respective webpages*/
 
@@ -78,6 +79,8 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+              <div style={{padding:10}}><SelectLanguage /></div>
+              
               <Dropdown />
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* <button className=" p-1 rounded-full text-gray-500 dark:text-gray-600 hover:text-black dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-800 focus:ring-gray-300 dark:focus:ring-gray-800">
