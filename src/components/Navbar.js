@@ -6,6 +6,9 @@ import { Disclosure} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 // import fi4rebaseConfig from "../config.js";
 
+import Dropdown from './Dropdown';
+import SelectLanguage from "./SelectLanguage";
+
 /*Builds the navigation menu of each web page and diverts clicks to their respective webpages*/
 
 var navigation = [
@@ -38,6 +41,7 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
+              
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <a
@@ -54,6 +58,7 @@ export default function Navbar() {
                   </a>
                   <div />
                 </div>
+                
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -74,6 +79,9 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+              <div style={{padding:10}}><SelectLanguage /></div>
+              
+              <Dropdown />
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* <button className=" p-1 rounded-full text-gray-500 dark:text-gray-600 hover:text-black dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-800 focus:ring-gray-300 dark:focus:ring-gray-800">
                   <span className="sr-only">View notifications</span>
@@ -149,6 +157,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+         
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
