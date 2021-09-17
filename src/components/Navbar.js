@@ -1,10 +1,8 @@
-// import { Fragment } from 'react'
+import { Fragment } from 'react'
 import React from 'react'
-// import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Disclosure} from '@headlessui/react'
-// import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-// import fi4rebaseConfig from "../config.js";
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import firebaseConfig from "../config";
 
 import Dropdown from './Dropdown';
 import SelectLanguage from "./SelectLanguage";
@@ -15,7 +13,7 @@ var navigation = [
   { name: 'Dashboard', link: '/', current: true },
   { name: 'Charts', link: '/charts', current: false },
  // { name: 'Predictions', link: '/predictions', current: false },
- // { name: 'Lab Tests', link: '/labTest',current: false },
+  { name: 'Lab Tests', link: '/labTest', current: false },
   // { name: 'Map', link: '/map',current: false },
 ]
 
@@ -83,23 +81,21 @@ export default function Navbar() {
               
               <Dropdown />
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {/* <button className=" p-1 rounded-full text-gray-500 dark:text-gray-600 hover:text-black dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-800 focus:ring-gray-300 dark:focus:ring-gray-800">
+                <button className=" p-1 rounded-full text-gray-500 dark:text-gray-600 hover:text-black dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-800 focus:ring-gray-300 dark:focus:ring-gray-800">
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button> */}
+                </button>
 
                 {/* Profile dropdown */}
-                {/* <Menu as="div" className="ml-3 relative">
+                <Menu as="div" className="ml-3 relative">
                   {({ open }) => (
                     <>
                       <div>
                         <Menu.Button className=" flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-700 focus:ring-gray-300 dark:focus:ring-gray-700">
                           <span className="sr-only">Open user menu</span>
-                          <img
-                            className="h-8 w-8 rounded-full"
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                          />
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
                         </Menu.Button>
                       </div>
                       <Transition
@@ -153,7 +149,7 @@ export default function Navbar() {
                       </Transition>
                     </>
                   )}
-                </Menu> */}
+                </Menu>
               </div>
             </div>
           </div>
