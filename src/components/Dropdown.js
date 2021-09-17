@@ -56,7 +56,7 @@ export default function Dropdown() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Comming Soon!
+                  Coming Soon!
                 </a>
               )}
             </Menu.Item>
@@ -69,7 +69,7 @@ export default function Dropdown() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Comming Soon!
+                  Coming Soon!
                 </a>
               )}
             </Menu.Item>
@@ -83,7 +83,7 @@ export default function Dropdown() {
                       'block w-full text-left px-4 py-2 text-sm'
                     )}
                   >
-                    Comming Soon!
+                    Coming Soon!
                   </button>
                 )}
               </Menu.Item>
