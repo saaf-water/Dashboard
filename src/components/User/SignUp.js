@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
 import firebaseConfig from "../../config"
-import coverimg from "./Asset/poster.webp"
+import coverimg from "../../components/Asset/poster.webp"
 
 /*SignUp.js builds the signup page of the SaafWater webapp, it also includes code for signing up as an admin */
 
