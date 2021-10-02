@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import firebaseConfig from "../../config";
+import firebaseConfig from "../../config.js";
 
 /* The code in Auth.js is for authentication integration to SaafWater webapp*/
 export const AuthContext = React.createContext();

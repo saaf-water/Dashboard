@@ -2,7 +2,6 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
-import { useTranslation } from 'react-i18next';
 
 const Graph = (graphData) => {
 
@@ -110,12 +109,11 @@ const Graph = (graphData) => {
 };
 
 const ElectricalConductivity = ({ current, history }) => {
-  const {t} = useTranslation();
   return (
     <>
       <div className="header text-black dark:text-white">
         <h5 className="hidden 2xl:block title text-gray-500 dark:text-gray-400 font-bold">
-        {t('EC')}
+        Electrical Conductivity
         </h5>
         <h5 className="2xl:hidden title text-gray-500 dark:text-gray-400 font-bold">
         EC

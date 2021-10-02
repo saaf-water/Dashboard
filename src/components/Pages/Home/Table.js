@@ -19,7 +19,6 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-//import { useTranslation } from 'react-i18next';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -43,14 +42,13 @@ const tableIcons = {
 
 /*Table.js constructs the History table on home page*/
 const Table = ({ historyMax }) => {
-  //const {t} = useTranslation();
-  return (
+    return (
         <>
         {historyMax.lastJsonMessage ? ( 
             <MaterialTable
                 icons={tableIcons}
                 columns={[
-                    { title: "Date", field: 'date' },
+                    { title: 'Date', field: 'date' },
                     { title: 'Time', field: 'time' },
                     { title: 'TDS', field: 'tds' },
                     { title: 'Turbidity', field: 'turbidity'},
