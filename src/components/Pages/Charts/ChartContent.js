@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-
+import { useTranslation } from 'react-i18next';
 import ElectricalConductivityFull from "./Graphs/electricalConductivity";
 import PHFull from "./Graphs/pH";
 import TDSFull from "./Graphs/TDS";
@@ -40,10 +40,10 @@ export default function ChartContent() {
         }, 1800000);
         // eslint-disable-next-line
     }, []);
-
+    const {t} = useTranslation();
     return (
         <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
-            <p className="font-light text-sm">Last Updated: {current.lastJsonMessage
+            <p className="font-light text-sm">{t("LU")} {current.lastJsonMessage
                 ? current.lastJsonMessage.date + ", " + current.lastJsonMessage.time : (
                     <SkeletonTheme className="py-1" color="#cfcfcf" highlightColor="#c4c4c4">
                         <p>
