@@ -41,13 +41,16 @@ export default function SelectLanguage() {
                   <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('en')}>English</button>
                </Menu.Item>
                <Menu.Item>
-                  <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('hn')}>Hindi</button>
+                  <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('hn')}>हिंदी</button>
                </Menu.Item>
                <Menu.Item>
-                  <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('te')}>Telugu</button>
+                  <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('te')}>తెలుగు</button>
                </Menu.Item>
                <Menu.Item>
-                  <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('kn')}>Kannada</button>
+                  <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('kn')}>ಕನ್ನಡ</button>
+               </Menu.Item>
+               <Menu.Item>
+                  <button className= "btn block px-4 py-2 text-sm" onClick={() => changeLanguage('ma')}>मराठी</button>
                </Menu.Item>
           </div>
         </Menu.Items>
