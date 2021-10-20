@@ -2,8 +2,9 @@ import { LockClosedIcon } from '@heroicons/react/solid'
 import React, { useContext } from "react"
 import { Redirect } from "react-router-dom"
 import { AuthContext } from "./Auth"
-import firebaseConfig from "../../config.js"
-import coverimg from "./Asset/poster.webp"
+import firebaseConfig from "../../config"
+import coverimg from "../../components/Asset/poster.webp"
+
 
 /*Login.js builds the Login page and contains code for login.*/
 
@@ -21,7 +22,7 @@ const LogIn = () => {
 
   const { currentUser } = useContext(AuthContext);
   if (currentUser) {
-    return <Redirect to="/" />;
+    return <Redirect to="/LabTest" />;
   }
 
 /*Page setup*/
@@ -48,7 +49,7 @@ const LogIn = () => {
                     </a>
                   </div>
                 </div>
-                <h2 className="mt-6 text-center text-md md:text-xl font-extrabold text-gray-900 dark:text-gray-100">Sign in to your account</h2>
+                <h2 className="mt-6 text-center text-md md:text-xl font-extrabold text-gray-900 dark:text-gray-100">Sign in to your account to access this feature</h2>
               </div>
               <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 <input type="hidden" name="remember" defaultValue="true" />

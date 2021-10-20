@@ -2,6 +2,7 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";
+import { useTranslation } from 'react-i18next'; // trans 1
 
 const Graph = (graphData) => {
 
@@ -95,11 +96,12 @@ const Graph = (graphData) => {
 };
 
 const Temperature = ({ current, history }) => {
+  const {t} = useTranslation(); //trans 2
   return (
     <>
       <div className="header text-black dark:text-white">
         <h5 className="title text-gray-500 dark:text-gray-400 font-bold">
-          Temperature
+          {t("Temp")}
         </h5>
         <h1 className="font-extrabold text-xl xl:text-2xl 2xl:text-3xl">
           {current.lastJsonMessage
