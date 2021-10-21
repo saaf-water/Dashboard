@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { Fragment } from 'react'
+/*import{useState} from 'react';*/
+import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useTranslation } from 'react-i18next';
 
-function classNames(...classes) {
+/*function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
-}
+}*/
 
 export default function SelectLanguage() {
 
 
-  const { t, i18n } = useTranslation();
+  const { /*t,*/ i18n } = useTranslation();
   const changeLanguage = lng => {
     i18n.changeLanguage(lng);
   };
