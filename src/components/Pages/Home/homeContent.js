@@ -12,7 +12,7 @@ import Turbidity from "./Graphs/Turbidity"
 import Table from "./Table"
 
 import Summary from "./Summary";
-//import Heatmap from "./Heatmap/Heatmap";
+import Heatmap from "./Heatmap/Heatmap";
 
 require('dotenv').config()
 
@@ -154,16 +154,14 @@ export default function HomeContent() {
                             </div>
                         </div>
 
-                        {/* 
                         <div className=" w-full xl:w-1/4 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
                             <div className="p-4">
                                 <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">Water Quality History </div>
-                                    <div className="flex justify-center">
-                                        <Heatmap current={historyMax} />
-                                    </div>
+                                <div className="flex justify-center">
+                                <Heatmap current={historyMax} />
+                            </div>
                             </div>
                         </div>
-                        */}
                     </div>
                 </div>
             </div>
