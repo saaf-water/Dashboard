@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, LocationMarkerIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Fragment, useState } from 'react'
+import { Disclosure, Listbox, Menu, Transition } from '@headlessui/react'
+import { LocationMarkerIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+
 // import fi4rebaseConfig from "../config.js";
 
 import React from 'react'
@@ -16,19 +17,12 @@ var navigation = [
   // { name: 'Map', link: '/map',current: false },
 ]
 
-var nodeLocation = [
-  { location: 'St. Paul' },
-  { location: 'Caranzalem' },
-  // { name: 'Predictions', link: '/predictions', current: false },
-  // { name: 'Lab Tests', link: '/labTest',current: false },
-  // { name: 'Map', link: '/map',current: false },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
+  
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
@@ -89,12 +83,13 @@ export default function Navbar() {
                 </button>  */}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                {/* <Menu as="div" className="ml-3 relative">
                   {({ open }) => (
                     <>
                       <div>
                         <Menu.Button className="flex text-sm p-1 rounded-full text-gray-500 dark:text-gray-600 hover:text-black dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-300 dark:focus:ring-offset-gray-800 focus:ring-gray-300 dark:focus:ring-gray-800">
                           <span className="sr-only">Location</span>
+                          Location
                           <LocationMarkerIcon className="h-6 w-6" aria-hidden="true" />
                         </Menu.Button>
                       </div>
@@ -131,7 +126,11 @@ export default function Navbar() {
                       </Transition>
                     </>
                   )}
-                </Menu>
+                </Menu> */}
+
+                
+
+
               </div>
             </div>
           </div>
