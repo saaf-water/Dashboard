@@ -97,10 +97,8 @@ export default function HomeContent() {
                                         scrolling="no"
                                         marginheight="0"
                                         marginwidth="0"
-                                        title="Saaf-Water-light"
-                                        src="//www.arcgis.com/apps/Embed/index.html?webmap=fbadf2d08dd141aa8fbfe60a227e189b&extent=73.5435,15.0755,74.5577,15.6462&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light">
-                                    </iframe>
-
+                                        title="Saaf-Water-Demo" 
+                                        src="//mslqpg6pwmixd3ji.maps.arcgis.com/apps/Embed/index.html?webmap=56b19dadc06545a6a34e0e02be4c427a&extent=73.5535,14.9888,75.5819,16.1371&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=false&theme=light">                                    </iframe>
                                     {/* <iframe
                                         className={classNames(useThemeDetector() ? 'block' : 'hidden', 'border-gray-700 rounded-xl')}
                                         width="100%"
