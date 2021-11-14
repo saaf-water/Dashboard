@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
-
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import TDS from "./Graphs/TDS"
 import ElectricalConductivity from "./Graphs/electricalConductivity"
 import PH from "./Graphs/pH"
@@ -12,6 +10,7 @@ import Turbidity from "./Graphs/Turbidity"
 import Table from "./Table"
 
 import Summary from "./Summary";
+import MenuBar from "../../MenuBar";
 //import Heatmap from "./Heatmap/Heatmap";
 
 require('dotenv').config()
@@ -51,10 +50,12 @@ export default function HomeContent() {
     const historyMax = useWebSocket(socketUrlMax);
     const history = useWebSocket(socketUrl);
     const current = useWebSocket(socketCurrentUrl);
+    
 
     useEffect(() => {
         //console.log("Sending Message on Component Mount");
         current.sendMessage("Get Data");
+        
         setTimeout(() => {
             history.sendMessage("Get Data");
         }, 1000);
@@ -82,13 +83,7 @@ export default function HomeContent() {
 
         <>
             <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
-                <p className="font-light text-sm">Last Updated: {current.lastJsonMessage
-                    ? current.lastJsonMessage.date + ", " + current.lastJsonMessage.time : (
-                        <SkeletonTheme className="py-1" color="#cfcfcf" highlightColor="#c4c4c4">
-                            <p>
-                                <Skeleton count={1} />
-                            </p>
-                        </SkeletonTheme>)}</p>
+                <MenuBar current={current} />
                 <div className="flex flex-wrap -m-4 ">
                     <div className="p-4 w-full lg:w-2/4 xl:w-3/5">
                         <div className="flex flex-row">

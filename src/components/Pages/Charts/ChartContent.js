@@ -7,6 +7,7 @@ import PHFull from "./Graphs/pH";
 import TDSFull from "./Graphs/TDS";
 import TemperatureFull from "./Graphs/Temperature";
 import TurbidityFull from "./Graphs/Turbidity";
+import MenuBar from "../../MenuBar";
 
 require('dotenv').config()
 /* ChartContent.js communicates through websockets and sends props to other graph components*/
@@ -43,13 +44,7 @@ export default function ChartContent() {
 
     return (
         <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
-            <p className="font-light text-sm">Last Updated: {current.lastJsonMessage
-                ? current.lastJsonMessage.date + ", " + current.lastJsonMessage.time : (
-                    <SkeletonTheme className="py-1" color="#cfcfcf" highlightColor="#c4c4c4">
-                        <p>
-                            <Skeleton count={1} />
-                        </p>
-                    </SkeletonTheme>)}</p>
+            <MenuBar current={current} />
             <div className="flex flex-wrap justify-center -m-4">
                 <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
                     <div className="p-4">
