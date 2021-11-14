@@ -1,6 +1,5 @@
-import { Fragment, useState } from 'react'
-import { Disclosure, Listbox, Menu, Transition } from '@headlessui/react'
-import { LocationMarkerIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Disclosure } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 // import fi4rebaseConfig from "../config.js";
 
