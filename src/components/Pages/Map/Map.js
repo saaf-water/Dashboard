@@ -38,9 +38,12 @@ export default function Map() {
               scrolling="no"
               marginheight="0"
               marginwidth="0"
-              title="Saaf-Water-light"
-              src="//www.arcgis.com/apps/Embed/index.html?webmap=fbadf2d08dd141aa8fbfe60a227e189b&extent=73.5435,15.0755,74.5577,15.6462&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=light">
+              title="Saaf Water"
+              src="//mslqpg6pwmixd3ji.maps.arcgis.com/apps/Embed/index.html?webmap=10b5116e37dc4392bb6130f75ca6b1be&extent=71.8177,14.8347,75.8744,17.1264&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=true&theme=light">
             </iframe>
+            
+           
+            
             {/* <iframe
               class={classNames(useThemeDetector() ? 'block' : 'hidden', 'border-gray-700 lg:rounded-t-xl')}
               width="100%"
