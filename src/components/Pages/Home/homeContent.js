@@ -10,7 +10,7 @@ import Turbidity from "./Graphs/Turbidity"
 import Table from "./Table"
 
 import Summary from "./Summary";
-import MenuBar from "./MenuBar";
+import MenuBar from "../../MenuBar";
 //import Heatmap from "./Heatmap/Heatmap";
 
 require('dotenv').config()
