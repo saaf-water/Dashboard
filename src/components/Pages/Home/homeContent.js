@@ -11,28 +11,11 @@ import Table from "./Table"
 
 import Summary from "./Summary";
 import MenuBar from "../../MenuBar";
+import Map from "../Map/Map";
 //import Heatmap from "./Heatmap/Heatmap";
 
 require('dotenv').config()
 
-const useThemeDetector = () => {
-    const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const [isDarkTheme, setIsDarkTheme] = useState(getCurrentTheme());
-    const mqListener = (e => {
-        setIsDarkTheme(e.matches);
-    });
-
-    useEffect(() => {
-        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-        darkThemeMq.addListener(mqListener);
-        return () => darkThemeMq.removeListener(mqListener);
-    }, []);
-    return isDarkTheme;
-}
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
 
 export default function HomeContent() {
 
@@ -89,27 +72,7 @@ export default function HomeContent() {
                         <div className="flex flex-row">
                             <div className="flex-auto justify-center items-center  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 h-96 overflow-auto no-scrollbar">
                                 <div className="flex items-start justify-center h-full">
-                                    <iframe
-                                        className={classNames(useThemeDetector() ? 'block' : 'block', 'border-gray-300 rounded-xl')}
-                                        width="100%"
-                                        height="100%"
-                                        frameborder="0"
-                                        scrolling="no"
-                                        marginheight="0"
-                                        marginwidth="0"
-                                        title="Saaf-Water-Demo" 
-                                        src="//mslqpg6pwmixd3ji.maps.arcgis.com/apps/Embed/index.html?webmap=56b19dadc06545a6a34e0e02be4c427a&extent=73.5535,14.9888,75.5819,16.1371&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=false&theme=light">                                    </iframe>
-                                    {/* <iframe
-                                        className={classNames(useThemeDetector() ? 'block' : 'hidden', 'border-gray-700 rounded-xl')}
-                                        width="100%"
-                                        height="100%"
-                                        frameborder="0"
-                                        scrolling="no"
-                                        marginheight="0"
-                                        marginwidth="0"
-                                        title="Saaf-Water-Dark"
-                                        src="//www.arcgis.com/apps/Embed/index.html?webmap=3c0c2dc817994509b9d529f7000b3a85&extent=50.3459,3.4536,115.2531,38.1566&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&disable_scroll=true&theme=dark">
-                                    </iframe> */}
+                                    <Map />
                                 </div>
                             </div>
                         </div>
