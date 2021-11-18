@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+//import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 import ElectricalConductivityFull from "./Graphs/electricalConductivity";
 import PHFull from "./Graphs/pH";
