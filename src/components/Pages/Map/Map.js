@@ -13,15 +13,18 @@ export default function Map() {
       let view;
       //let url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTC96UNkmoscLTYpCifCfoY8mE7BTT0QafhnG1TMXyn3ddWHtIDRjReS2RnZNa-qLJi2TccXJtvSBL4/pub?gid=0&single=true&output=csv";
 
-      loadModules(["esri/views/MapView","esri/WebMap","esri/layers/CSVLayer","esri/layers/FeatureLayer"],{
+      loadModules(["esri/config","esri/views/MapView","esri/WebMap","esri/layers/CSVLayer","esri/layers/FeatureLayer","esri/widgets/Search","esri/widgets/Home"],{
         css:true
-      }).then(([MapView,WebMap,CSVLayer,FeatureLayer])=>{
+      }).then(([esriConfig,MapView,WebMap,CSVLayer,FeatureLayer,Search,Home])=>{
         //eslint-disable-next-line
           {/*
           let csvLayer = new CSVLayer({
             url: url,
            });
-          */}          
+          */}      
+          
+          esriConfig.apiKey = "AAPK8f070f4a6eda4ace8a8b768eba6d00d5UK26MjwuqK6dnD4dqZFTF65x0K2ZTUJ9ymU1uecZNW6R7_gO6Aw0_K8kYGughqYK";
+
           const defaultSym = {
             type: "simple-marker",
             //color: "#333333",
@@ -142,10 +145,21 @@ export default function Map() {
 
           view = new MapView({
             map: webmap,
-            center:[73.823476, 15.474719],
-            zoom:8,
+            center:[76.977872, 17.921361],
+            zoom:6,
             container: MapEl.current
           })
+
+          const search = new Search({
+            view: view
+          });
+
+          let homeWidget = new Home({
+            view: view
+          });
+          
+          view.ui.add(homeWidget, "top-left");
+          view.ui.add(search, "top-right");
 
            //webmap.add(csvLayer);
 
