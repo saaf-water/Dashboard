@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Charts from "./components/Pages/Charts/Charts"
 import Dashboard from './components/Pages/Home/Dashboard'
+import MapPage from './components/Pages/Map/MapPage'
 //import Map from './components/Pages/Map/Map'
 import Navbar from './components/Navbar'
 
@@ -24,7 +25,7 @@ function App() {
           {/* <Route path="/Predictions" component={Dashboard}/> */}
           <Route path="/Charts" component={Charts}/>
           {/* <Route path="/labTest" component={Dashboard} /> */}
-          {/* <Route path="/map" component={Map} /> */}
+           <Route path="/map" component={MapPage} /> 
         </Switch>
       </div>
     </BrowserRouter>
