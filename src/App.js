@@ -1,10 +1,12 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Charts from "./components/Pages/Charts/Charts"
-import Dashboard from './components/Pages/Home/Dashboard'
-import MapPage from './components/Pages/Map/MapPage'
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Charts from "./components/Pages/Charts/Charts";
+import Dashboard from "./components/Pages/Home/Dashboard";
+import MapPage from "./components/Pages/Map/MapPage";
 //import Map from './components/Pages/Map/Map'
-import Navbar from './components/Navbar'
+import Navbar from "./components/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { setDataLocation } from "./redux/reducers/saafwaterReducer";
 
 /* The App.js file takes care of the routing of the webapp*/
 
@@ -16,16 +18,15 @@ import Navbar from './components/Navbar'
 function App() {
   return (
     //<AuthProvider>
-
     <BrowserRouter>
       <div className="font-roboto bg-gray-200 dark:bg-gray-900 h-screen overflow-hidden">
         <Navbar />
         <Switch>
-          <Route path="/" component={Dashboard} exact/>
+          <Route path="/" component={Dashboard} exact />
           {/* <Route path="/Predictions" component={Dashboard}/> */}
-          <Route path="/Charts" component={Charts}/>
+          <Route path="/Charts" component={Charts} />
           {/* <Route path="/labTest" component={Dashboard} /> */}
-           <Route path="/map" component={MapPage} /> 
+          <Route path="/map" component={MapPage} />
         </Switch>
       </div>
     </BrowserRouter>
