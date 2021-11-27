@@ -1,7 +1,6 @@
 /*homeContent.js integrates all the different components of home page into one.*/
 
 import React, { useState, useEffect } from "react";
-import useWebSocket from "react-use-websocket";
 import TDS from "./Graphs/TDS";
 import ElectricalConductivity from "./Graphs/electricalConductivity";
 import PH from "./Graphs/pH";
@@ -12,64 +11,62 @@ import Table from "./Table";
 import Summary from "./Summary";
 import MenuBar from "../../MenuBar";
 import Map from "../Map/Map";
-import { useDispatch } from "react-redux";
-import {
-  setCurrentData,
-  setHistoryData,
-} from "../../../redux/reducers/saafwaterReducer";
-//import Heatmap from "./Heatmap/Heatmap";
-
+import { useSelector } from "react-redux";
 require("dotenv").config();
 
 export default function HomeContent() {
-  const [socketUrl] = useState(process.env.React_App_HISTORY_WEBSOCKET);
-
-  const [socketCurrentUrl] = useState(process.env.React_App_PUMP_WEBSOCKET);
-  const [socketUrlMax] = useState(process.env.React_App_HISTORYMAX_WEBSOCKET);
-
-  const historyMax = useWebSocket(socketUrlMax);
-  const history = useWebSocket(socketUrl);
-  const current = useWebSocket(socketCurrentUrl);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    //console.log("Sending Message on Component Mount");
-    current.sendMessage("Get Data");
-
-    setTimeout(() => {
-      history.sendMessage("Get Data");
-    }, 1000);
-    setTimeout(() => {
-      historyMax.sendMessage("Get Data");
-    }, 1000);
-
-    //Every 30 Mins
-    setInterval(() => {
-      //console.log("Sending Message");
-      current.sendMessage("Get Data");
-      setTimeout(() => {
-        history.sendMessage("Get Data");
-      }, 2000);
-      setTimeout(() => {
-        historyMax.sendMessage("Get Data");
-      }, 1000);
-    }, 1800000);
-
-    // eslint-disable-next-line
-  }, []);
+  const [selected, setSelected] = useState({
+    id: 20211112,
+    location: "St. Paul",
+  });
+  const [historyData, setHistoryData] = useState({});
+  const [currentSummary, setCurrentSummary] = useState({ summary: undefined });
+  const [historyMaxData, setHistoryMaxData] = useState({});
+  const historyMax = useSelector((state) => state.swData.historyMax.data);
+  const history = useSelector((state) => state.swData.historyData.data);
+  const current = useSelector((state) => state.swData.currentData.data);
 
   useEffect(() => {
-    dispatch(setHistoryData({ data: history }));
+    setHistoryData(history);
   }, [history]);
+  useEffect(() => {
+    setHistoryMaxData(historyMax);
+    if (historyMax.lastJsonMessage) {
+      setCurrentSummary({ summary: 3 });
+    }
+  }, [historyMax]);
 
   useEffect(() => {
-    dispatch(setCurrentData({ data: current }));
-  }, [current]);
+    if (historyData.lastJsonMessage) {
+      let data = { lastJsonMessage: { hist: [] } };
+      data.lastJsonMessage.hist = history.lastJsonMessage.hist.filter(
+        (data) => selected.id === data.id
+      );
+      setHistoryData(data);
+    }
+    if (historyMax.lastJsonMessage) {
+      let data = { lastJsonMessage: { histMax: [] } };
+      data.lastJsonMessage.histMax = historyMax.lastJsonMessage.histMax.filter(
+        (data) => {
+          return selected.id === data.id;
+        }
+      );
+      setCurrentSummary({ summary: data.lastJsonMessage.histMax[0].summary });
+
+      setHistoryMaxData(data);
+    }
+  }, [selected]);
 
   return (
     <>
       <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
-        <MenuBar current={current} />
+        <MenuBar
+          current={current}
+          selected={selected}
+          setSelected={(data) => {
+            setSelected(data);
+          }}
+        />
         <div className="flex flex-wrap -m-4 ">
           <div className="p-4 w-full lg:w-2/4 xl:w-3/5">
             <div className="flex flex-row">
@@ -81,25 +78,25 @@ export default function HomeContent() {
             </div>
           </div>
           <div className="order-first p-4 w-full lg:w-2/4 xl:w-2/5">
-            <Summary current={current} />
+            <Summary current={currentSummary} />
           </div>
         </div>
         <div className="flex flex-wrap -m-4 overflow-x-auto">
           <div className="flex justify-center flex-row p-4 lg:w-full">
             <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-              <TDS current={current} history={history} />
+              <TDS current={current} history={historyData} />
             </div>
             <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-              <Turbidity current={current} history={history} />
+              <Turbidity current={current} history={historyData} />
             </div>
             <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-              <PH current={current} history={history} />
+              <PH current={current} history={historyData} />
             </div>
             <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-              <ElectricalConductivity current={current} history={history} />
+              <ElectricalConductivity current={current} history={historyData} />
             </div>
             <div className="p-4 w-full lg:w-1/6 my-4 mx-4  border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
-              <Temperature current={current} history={history} />
+              <Temperature current={current} history={historyData} />
             </div>
           </div>
         </div>
@@ -111,7 +108,7 @@ export default function HomeContent() {
                 <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
                   History{" "}
                 </div>
-                <Table historyMax={historyMax} />
+                {/* <Table historyMax={historyMaxData} /> */}
               </div>
             </div>
 
