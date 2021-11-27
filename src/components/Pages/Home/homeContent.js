@@ -12,6 +12,7 @@ import Summary from "./Summary";
 import MenuBar from "../../MenuBar";
 import Map from "../Map/Map";
 import { useSelector } from "react-redux";
+import useWebSocket from "react-use-websocket";
 require("dotenv").config();
 
 export default function HomeContent() {
@@ -22,6 +23,8 @@ export default function HomeContent() {
   const [historyData, setHistoryData] = useState({});
   const [currentSummary, setCurrentSummary] = useState({ summary: undefined });
   const [historyMaxData, setHistoryMaxData] = useState({});
+
+  //history max data from redux
   const historyMax = useSelector((state) => state.swData.historyMax.data);
   const history = useSelector((state) => state.swData.historyData.data);
   const current = useSelector((state) => state.swData.currentData.data);
@@ -29,6 +32,8 @@ export default function HomeContent() {
   useEffect(() => {
     setHistoryData(history);
   }, [history]);
+
+  //stores historymax data from redux into seperate state variable HistoryMaxData
   useEffect(() => {
     setHistoryMaxData(historyMax);
     if (historyMax.lastJsonMessage) {
@@ -108,7 +113,7 @@ export default function HomeContent() {
                 <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
                   History{" "}
                 </div>
-                {/* <Table historyMax={historyMaxData} /> */}
+                <Table historyMax={historyMaxData} />
               </div>
             </div>
 
