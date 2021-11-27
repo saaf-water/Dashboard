@@ -12,7 +12,7 @@ import Summary from "./Summary";
 import MenuBar from "../../MenuBar";
 import Map from "../Map/Map";
 import { useSelector } from "react-redux";
-import useWebSocket from "react-use-websocket";
+//import useWebSocket from "react-use-websocket";
 require("dotenv").config();
 
 export default function HomeContent() {
@@ -59,7 +59,7 @@ export default function HomeContent() {
       setCurrentSummary({ summary: data.lastJsonMessage.histMax[0].summary });
 
       setHistoryMaxData(data);
-    }
+    }// eslint-disable-next-line
   }, [selected]);
 
   return (

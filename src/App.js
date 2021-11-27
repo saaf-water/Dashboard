@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Charts from "./components/Pages/Charts/Charts";
 import Dashboard from "./components/Pages/Home/Dashboard";
-import MapPage from "./components/Pages/Map/MapPage";
+//import MapPage from "./components/Pages/Map/MapPage";
 //import Map from './components/Pages/Map/Map'
 import Navbar from "./components/Navbar";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
-  setDataLocation,
+  //setDataLocation,
   setCurrentData,
   setHistoryData,
   setHistoryMax,
@@ -74,8 +74,8 @@ function App() {
           <Route path="/" component={Dashboard} exact />
           {/* <Route path="/Predictions" component={Dashboard}/> */}
           <Route path="/Charts" component={Charts} />
-          {/* <Route path="/labTest" component={Dashboard} /> */}
-          <Route path="/map" component={MapPage} />
+          {/* <Route path="/labTest" component={Dashboard} /> 
+          <Route path="/map" component={MapPage} />*/}
         </Switch>
       </div>
     </BrowserRouter>
