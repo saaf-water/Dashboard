@@ -60,7 +60,7 @@ export default function HomeContent() {
 
       setHistoryMaxData(data);
     }// eslint-disable-next-line
-  }, [selected]);
+  }, [selected, history, historyMax ]);
 
   return (
     <>
