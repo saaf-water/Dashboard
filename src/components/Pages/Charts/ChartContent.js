@@ -30,10 +30,7 @@ export default function ChartContent() {
     if (historyData.lastJsonMessage) {
       let data = { lastJsonMessage: { hist: [] } };
       data.lastJsonMessage.hist = history.lastJsonMessage.hist.filter(
-        (data) => {
-          if (selected.id === 0) return data;
-          else if (selected.id === data.id) return data;
-        }
+        (data) => selected.id === data.id
       );
       setHistoryData(data);
     }
