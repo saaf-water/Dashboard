@@ -33,7 +33,7 @@ export default function ChartContent() {
         (data) => selected.id === data.id
       );
       setHistoryData(data);
-    }
+    }// eslint-disable-next-line
   }, [selected]);
 
   return (

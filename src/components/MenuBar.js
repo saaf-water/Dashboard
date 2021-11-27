@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { LocationMarkerIcon } from "@heroicons/react/outline";
-import { useDispatch, useSelector } from "react-redux";
-import { setDataLocation } from "../redux/reducers/saafwaterReducer";
+//import { useDispatch, useSelector } from "react-redux";
+//import { setDataLocation } from "../redux/reducers/saafwaterReducer";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

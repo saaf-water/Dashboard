@@ -103,7 +103,7 @@ export default function Map() {
             ]
           };
           const GoundWaterQuality = new FeatureLayer({
-            url: "https://services3.arcgis.com/7bNIiHtQzkfdSJfA/arcgis/rest/services/groundwater_quality/FeatureServer/0",
+            url: "https://services3.arcgis.com/7bNIiHtQzkfdSJfA/arcgis/rest/services/copy_of_ground_water_quality_goa_sheet1/FeatureServer/0",
             renderer: rendererGW,
             title: "Summary",
             popupTemplate: {
@@ -145,9 +145,10 @@ export default function Map() {
 
           view = new MapView({
             map: webmap,
-            center:[76.977872, 17.921361],
-            zoom:6,
-            container: MapEl.current
+            center:[73.847052, 15.478381],
+            zoom:13,
+            container: MapEl.current,
+            
           })
 
           const search = new Search({
