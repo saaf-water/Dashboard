@@ -10,22 +10,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const nodeLocation = [{ id: 20211112, location: "St. Paul" }];
-
-const MenuBar = ({ current }) => {
-  const [selected, setSelected] = useState(nodeLocation[0]);
-  const dispatch = useDispatch();
-  const location = useSelector((state) => state.swData.dataLocation);
-
-  useEffect(() => {
-    // When selected value changes,
-    // change the data location value in redux.
-    dispatch(setDataLocation({ value: selected.location }));
-  }, [selected]);
-
+const MenuBar = ({ current, selected, setSelected }) => {
   if (current.lastJsonMessage) {
     const nodeLocation = current.lastJsonMessage.listID;
-    console.log(nodeLocation);
+    // console.log(nodeLocation);
     return (
       <div className="right-0 pl-1 flex flex-row justify-between items-center">
         <p className="font-light text-xs md:text-sm truncate">
