@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import useWebSocket from "react-use-websocket";
+
+import { useSelector } from "react-redux";
 //import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 import ElectricalConductivityFull from "./Graphs/electricalConductivity";
@@ -9,74 +10,89 @@ import TemperatureFull from "./Graphs/Temperature";
 import TurbidityFull from "./Graphs/Turbidity";
 import MenuBar from "../../MenuBar";
 
-require('dotenv').config()
+require("dotenv").config();
 /* ChartContent.js communicates through websockets and sends props to other graph components*/
 
 export default function ChartContent() {
-    const [socketUrl] = useState(
-        process.env.React_App_HISTORY_WEBSOCKET
-    );
+  const [selected, setSelected] = useState({
+    id: 20211112,
+    location: "St. Paul",
+  });
+  const [historyData, setHistoryData] = useState({});
+  const history = useSelector((state) => state.swData.historyData.data);
+  const current = useSelector((state) => state.swData.currentData.data);
 
-    const [socketCurrentUrl] = useState(
-        process.env.React_App_PUMP_WEBSOCKET
-    );
+  useEffect(() => {
+    setHistoryData(history);
+  }, [history]);
 
-    const history = useWebSocket(socketUrl);
-    const current = useWebSocket(socketCurrentUrl);
+  useEffect(() => {
+    if (historyData.lastJsonMessage) {
+      let data = { lastJsonMessage: { hist: [] } };
+      data.lastJsonMessage.hist = history.lastJsonMessage.hist.filter(
+        (data) => {
+          if (selected.id === 0) return data;
+          else if (selected.id === data.id) return data;
+        }
+      );
+      setHistoryData(data);
+    }
+  }, [selected]);
 
-    useEffect(() => {
-        //console.log("Sending Message on Component Mount");
-        current.sendMessage("Get Data");
-        setTimeout(() => {
-            history.sendMessage("Get Data");
-        }, 2000);
-
-        //Every 30 Mins
-        setInterval(() => {
-            //console.log("Sending Message");
-            current.sendMessage("Get Data");
-            setTimeout(() => {
-                history.sendMessage("Get Data");
-            }, 2000);
-        }, 1800000);
-        // eslint-disable-next-line
-    }, []);
-
-    return (
-        <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
-            <MenuBar current={current} />
-            <div className="flex flex-wrap justify-center -m-4">
-                <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                    <div className="p-4">
-                        <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">TDS</div>
-                        <TDSFull current={current} history={history} />
-                    </div>
-                </div>
-                <div className=" w-full lg:w-2/5 lg:h-1/4 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                    <div className="p-4">
-                        <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">Turbidity</div>
-                        <TurbidityFull current={current} history={history} />
-                    </div>
-                </div>
-                <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                    <div className="p-4">
-                        <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">ph</div>
-                        <PHFull current={current} history={history} />
-                    </div>
-                </div>
-                <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                    <div className="p-4">
-                        <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">Electrical Conductivity</div>
-                        <ElectricalConductivityFull current={current} history={history} />
-                    </div>
-                </div>
-                <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800" >
-                    <div className="p-4">
-                        <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">Temperature</div>
-                        <TemperatureFull current={current} history={history} />
-                    </div>
-                </div>
+  return (
+    <div className="font-roboto flex-col pb-44 space-y-2 container px-5 py-5 mx-auto">
+      <MenuBar
+        current={current}
+        selected={selected}
+        setSelected={(data) => {
+          setSelected(data);
+        }}
+      />
+      <div className="flex flex-wrap justify-center -m-4">
+        <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+          <div className="p-4">
+            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
+              TDS
             </div>
+            <TDSFull current={current} history={historyData} />
+          </div>
         </div>
-    );
+        <div className=" w-full lg:w-2/5 lg:h-1/4 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+          <div className="p-4">
+            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
+              Turbidity
+            </div>
+            <TurbidityFull current={current} history={historyData} />
+          </div>
+        </div>
+        <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+          <div className="p-4">
+            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
+              ph
+            </div>
+            <PHFull current={current} history={historyData} />
+          </div>
+        </div>
+        <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+          <div className="p-4">
+            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
+              Electrical Conductivity
+            </div>
+            <ElectricalConductivityFull
+              current={current}
+              history={historyData}
+            />
+          </div>
+        </div>
+        <div className=" w-full lg:w-2/5 m-4 relative border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800">
+          <div className="p-4">
+            <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
+              Temperature
+            </div>
+            <TemperatureFull current={current} history={historyData} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
