@@ -29,10 +29,6 @@ export default function HomeContent() {
   const history = useSelector((state) => state.swData.historyData.data);
   const current = useSelector((state) => state.swData.currentData.data);
 
-  //history max data directly from websocket
-  const [socketUrlMax] = useState(process.env.React_App_HISTORYMAX_WEBSOCKET);
-  const historyMaxSocket = useWebSocket(socketUrlMax);
-
   useEffect(() => {
     setHistoryData(history);
   }, [history]);
@@ -117,8 +113,7 @@ export default function HomeContent() {
                 <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
                   History{" "}
                 </div>
-                {/* passed data from websocket to table */}
-                <Table historyMax={historyMaxSocket} />
+                <Table historyMax={historyMaxData} />
               </div>
             </div>
 

@@ -6,7 +6,7 @@ import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import Clear from "@material-ui/icons/Clear";
 import DeleteOutline from "@material-ui/icons/DeleteOutline";
 import Edit from "@material-ui/icons/Edit";
@@ -44,6 +44,12 @@ const tableIcons = {
 
 /*Table.js constructs the History table on home page*/
 const Table = ({ historyMax }) => {
+  const [newData, setNewData] = useState([]);
+  useEffect(() => {
+    if (historyMax.lastJsonMessage) {
+      setNewData(historyMax.lastJsonMessage.histMax.map((o) => ({ ...o })));
+    }
+  }, [historyMax]);
   return (
     <>
       {historyMax.lastJsonMessage ? (
@@ -59,7 +65,7 @@ const Table = ({ historyMax }) => {
             { title: "Temperature", field: "temperature" },
             { title: "Summary", field: "summary" },
           ]}
-          data={historyMax.lastJsonMessage.histMax}
+          data={newData}
           title="Pump ID: 20210716"
         />
       ) : (
