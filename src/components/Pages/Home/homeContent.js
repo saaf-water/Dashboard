@@ -1,6 +1,8 @@
 /*homeContent.js integrates all the different components of home page into one.*/
 
 import React, { useState, useEffect } from "react";
+import useWebSocket from "react-use-websocket";
+
 import TDS from "./Graphs/TDS";
 import ElectricalConductivity from "./Graphs/electricalConductivity";
 import PH from "./Graphs/pH";
@@ -21,20 +23,16 @@ export default function HomeContent() {
   });
   const [historyData, setHistoryData] = useState({});
   const [currentSummary, setCurrentSummary] = useState({ summary: undefined });
-  const [historyMaxData, setHistoryMaxData] = useState({});
-  const historyMax = useSelector((state) => state.swData.historyMax.data);
   const history = useSelector((state) => state.swData.historyData.data);
   const current = useSelector((state) => state.swData.currentData.data);
+
+  const [socketUrlMax] = useState(process.env.React_App_HISTORYMAX_WEBSOCKET);
+
+  const historyMax = useWebSocket(socketUrlMax);
 
   useEffect(() => {
     setHistoryData(history);
   }, [history]);
-  useEffect(() => {
-    setHistoryMaxData(historyMax);
-    if (historyMax.lastJsonMessage) {
-      setCurrentSummary({ summary: 3 });
-    }
-  }, [historyMax]);
 
   useEffect(() => {
     if (historyData.lastJsonMessage) {
@@ -44,18 +42,19 @@ export default function HomeContent() {
       );
       setHistoryData(data);
     }
-    if (historyMax.lastJsonMessage) {
-      let data = { lastJsonMessage: { histMax: [] } };
-      data.lastJsonMessage.histMax = historyMax.lastJsonMessage.histMax.filter(
-        (data) => {
-          return selected.id === data.id;
-        }
-      );
-      setCurrentSummary({ summary: data.lastJsonMessage.histMax[0].summary });
-
-      setHistoryMaxData(data);
-    }
   }, [selected]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      historyMax.sendMessage("Get Data");
+    }, 1000);
+
+    setInterval(() => {
+      setTimeout(() => {
+        historyMax.sendMessage("Get Data");
+      }, 1000);
+    }, 1800000);
+  }, []);
 
   return (
     <>
@@ -78,7 +77,7 @@ export default function HomeContent() {
             </div>
           </div>
           <div className="order-first p-4 w-full lg:w-2/4 xl:w-2/5">
-            <Summary current={currentSummary} />
+            <Summary current={current.lastJsonMessage} />
           </div>
         </div>
         <div className="flex flex-wrap -m-4 overflow-x-auto">
@@ -108,7 +107,7 @@ export default function HomeContent() {
                 <div className="p-5 justify-self-start content-center font-roboto font-extrabold text-black dark:text-white text-3xl pb-5">
                   History{" "}
                 </div>
-                {/* <Table historyMax={historyMaxData} /> */}
+                <Table historyMax={historyMax} />
               </div>
             </div>
 
