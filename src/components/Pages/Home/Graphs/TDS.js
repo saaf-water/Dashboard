@@ -116,10 +116,8 @@ const Graph = (graphData) => {
   return <Line data={data} options={options} />;
 };
 
-const TDS = () => {
+const TDS = ({ current, history }) => {
   // Now taking data from redux
-  const history = useSelector((state) => state.swData.historyData.data);
-  const current = useSelector((state) => state.swData.currentData.data);
 
   return (
     <>
