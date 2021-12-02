@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water
+// Forget password component.
+
 import React from 'react'
 import firebaseConfig from "../../config.js";
 

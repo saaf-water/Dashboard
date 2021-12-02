@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// Table component
+
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import MaterialTable from "material-table";
 

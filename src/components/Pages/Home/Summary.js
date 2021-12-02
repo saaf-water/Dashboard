@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// Water quality summary component 
+
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 /*Summary.js contains code for displaying water quality summary to users*/

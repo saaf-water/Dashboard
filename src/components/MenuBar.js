@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water
+// Menubar component
+
 import React, { Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";

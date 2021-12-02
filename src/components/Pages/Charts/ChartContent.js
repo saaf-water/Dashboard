@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// Chart Content Component.
+
 import React, { useState, useEffect } from "react";
 
 import { useSelector } from "react-redux";

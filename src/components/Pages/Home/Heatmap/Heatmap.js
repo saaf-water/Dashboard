@@ -1,3 +1,5 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+
 /*Heatmap.js contains code for Heatmap component on homepage*/
 import React, { useEffect, useState } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";

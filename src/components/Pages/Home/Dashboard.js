@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// Dashboard.js where Home content is exported.
+
 import React from 'react'
 import HomeContent from './homeContent'
 // import React, { useContext }  from 'react'

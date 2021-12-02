@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water
+// Map component
+
 /* Map.js contains code which shows the map page*/
 
 import React, { useRef, useEffect } from 'react';

@@ -1,3 +1,4 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
 /*homeContent.js integrates all the different components of home page into one.*/
 
 import React, { useState, useEffect } from "react";
