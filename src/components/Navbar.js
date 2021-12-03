@@ -1,5 +1,6 @@
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { NavLink } from "react-router-dom";
 
 // import fi4rebaseConfig from "../config.js";
 
@@ -10,7 +11,7 @@ import React from 'react'
 
 var navigation = [
   { name: 'Dashboard', link: '/', current: true },
-  { name: 'Charts', link: '/charts', current: false },
+  { name: 'Charts', link: '/Charts', current: false },
   // { name: 'Predictions', link: '/predictions', current: false },
   // { name: 'Lab Tests', link: '/labTest',current: false },
   // { name: 'Map', link: '/map',current: false },
@@ -41,37 +42,37 @@ export default function Navbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <a
-                    href="/"
+                  <NavLink
+                    to="/"
                     className="text-2xl font-thin text-black dark:text-gray-300 lg:hidden h-8 w-auto"
                     alt="Saaf water">
                     <span class="text-2xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
-                  </a>
-                  <a
-                    href="/"
+                  </NavLink>
+                  <NavLink
+                    to="/"
                     className="text-3xl font-thin text-black dark:text-gray-300 hidden lg:block h-8 w-auto"
                     alt="Saaf water">
                     <span class="text-3xl font-black text-indigo-600 dark:text-indigo-400">Saaf </span> water
-                  </a>
+                  </NavLink>
                   <div />
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <ul classNames="list-none">
-                        <li
-                          key={item.name}
-                          onClick={() => { window.location.pathname = item.link }}
-                          className={classNames(
-                            window.location.pathname === item.link ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700 cursor-pointer' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
-                            'px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
-                          )}
-                          aria-current={item.current ? 'page' : undefined}
-                        >
-                          {item.name}
-                        </li>
-                      </ul>
-                    ))}
+                  <NavLink
+                    to="/"
+                    className="p-3 bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700 cursor-pointer' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
+                    'px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                    alt="Saaf water">
+                    Dashboard
+                  </NavLink>
+
+                  <NavLink
+                    to="/Charts"
+                    className="p-3 bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 border border-gray-300 dark:border-gray-700 cursor-pointer' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 ',
+                    'px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                    alt="Saaf water">
+                    Charts
+                  </NavLink>
                   </div>
                 </div>
               </div>
