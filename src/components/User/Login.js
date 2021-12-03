@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water
+// Login component for authentication
+
 import { LockClosedIcon } from '@heroicons/react/solid'
 import React, { useContext } from "react"
 import { Redirect } from "react-router-dom"

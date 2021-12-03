@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// config.js file.
+
 import firebase from "firebase/app";
 import "firebase/auth";
 

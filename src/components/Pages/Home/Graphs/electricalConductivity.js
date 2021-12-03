@@ -1,4 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
 /*electricalConductivity.js contains the code for EC component, it shows the electrical conductivity of Water.*/
+
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Line } from "react-chartjs-2";

@@ -1,5 +1,8 @@
 /* Map.js contains code which shows the map page*/
 
+// Copyright 2021 Saaf water
+// Map component
+
 import React, { useRef, useEffect } from 'react';
 import { loadModules } from 'esri-loader';
 

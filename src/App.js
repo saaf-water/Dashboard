@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water
+// App.js 
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Charts from "./components/Pages/Charts/Charts";

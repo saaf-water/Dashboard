@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water
+// Sign up component for authentication
+
 import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
 import firebaseConfig from "../../config"

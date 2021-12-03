@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// Index.js file.
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";

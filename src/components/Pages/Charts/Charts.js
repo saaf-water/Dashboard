@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// Chart.js where Chart content is exported.
+
 import React from 'react'
 import ChartContent from './ChartContent';
 /*Chart.js shows the ChartContent.js*/

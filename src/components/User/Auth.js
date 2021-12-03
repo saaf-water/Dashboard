@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water
+// Firebase authentication component
+
 import React, { useEffect, useState } from "react";
 import firebaseConfig from "../../config.js";
 

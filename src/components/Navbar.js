@@ -1,3 +1,7 @@
+// Copyright 2021 Saaf water
+// Navbar component
+
+
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 

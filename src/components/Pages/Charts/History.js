@@ -1,3 +1,6 @@
+// Copyright 2021 Saaf water under Apache 2.0 License.
+// History of various water quality components.
+
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
